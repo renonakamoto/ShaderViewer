@@ -15,22 +15,23 @@ public:
 	/**
 	* @brief コンストラクタ
 	*/
-	PostEffectBase(VertexShader* vs_, PixelShader* ps_)
-	{
-		m_ScreenSprite.Init(
-			GRAPHICS->GetRenderTarget(KindRT::RT_OFF_SCREEN)->GetTexture(),
-			WINDOW->GetClientWidth(),
-			WINDOW->GetClientHeight(),
-			vs_,
-			ps_
-		);
-	}
+	PostEffectBase()
+	{}
 
 	/**
 	* @brief デストラクタ
 	*/
 	~PostEffectBase()
 	{}
+
+	/**
+	* @fn bool Init(VertexShader* vs_, PixelShader* ps_)
+	* @brief 初期化関数
+	* @param[in] vs_ 頂点シェーダー
+	* @param[in] ps_ ピクセルシェーダー
+	* @return bool 成功したかどうか
+	*/
+	bool Init(VertexShader* vs_, PixelShader* ps_);
 
 	/**
 	* @fn virtual void Render(const ViewModel& model_, const ViewModel* bgModel_) = 0

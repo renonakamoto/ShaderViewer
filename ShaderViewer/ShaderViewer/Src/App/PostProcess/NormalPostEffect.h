@@ -15,8 +15,7 @@ public:
 	/**
 	* @brief コンストラクタ
 	*/
-	NormalPostEffect(VertexShader* vs_, PixelShader* ps_) :
-		PostEffectBase(vs_, ps_)
+	NormalPostEffect()
 	{}
 
 	/**

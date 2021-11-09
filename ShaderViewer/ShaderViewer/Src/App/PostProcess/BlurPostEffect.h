@@ -19,14 +19,21 @@ private:
 	{
 		float BlurStrength;	//! ブラーの強さ
 		float Pad[3];		//! サイズを16の倍数に合わせるためのパディング
+
+		/**
+		* @brief コンストラクタ
+		*/
+		BlurBuffer()
+		{
+			ZeroMemory(this, sizeof(BlurBuffer));
+		}
 	};
 
 public:
 	/**
 	* @brief コンストラクタ
 	*/
-	BlurPostEffect(VertexShader* vs_, PixelShader* ps_) :
-		PostEffectBase(vs_, ps_)
+	BlurPostEffect()
 	{
 		CreateConstantBuffer();
 	}

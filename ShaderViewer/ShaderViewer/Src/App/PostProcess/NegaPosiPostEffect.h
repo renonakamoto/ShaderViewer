@@ -20,6 +20,9 @@ private:
 		float NegaRate;		//! ネガポジ反転率
 		float Pad[3];		//! サイズを16の倍数に合わせるためのパディング
 
+		/**
+		* @brief ネガポジパラメータ構造体
+		*/
 		NegaBuffer()
 		{
 			ZeroMemory(this, sizeof(NegaBuffer));
@@ -30,8 +33,7 @@ public:
 	/**
 	* @brief コンストラクタ
 	*/
-	NegaPosiPostEffect(VertexShader* vs_, PixelShader* ps_) :
-		PostEffectBase(vs_, ps_)
+	NegaPosiPostEffect()
 	{
 		CreateConstantBuffer();
 	}

@@ -97,7 +97,6 @@ private:
 	/**
 	* @fn bool InitPostProcess()
 	* @brief ポストプロセスの初期化関数
-	* @return bool 成功したかどうか
 	*/
 	void InitPostProcess();
 

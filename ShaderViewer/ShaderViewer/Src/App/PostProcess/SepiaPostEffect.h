@@ -18,6 +18,9 @@ private:
 		float SpiaRate;		//! セピア率
 		float Pad[3];		//! サイズを16の倍数に合わせるためのパディング
 
+		/**
+		* @brief コンストラクタ
+		*/
 		SepiaBuffer()
 		{
 			ZeroMemory(this, sizeof(SepiaBuffer));
@@ -28,8 +31,7 @@ public:
 	/**
 	* @brief コンストラクタ
 	*/
-	SepiaPostEffect(VertexShader* vs_, PixelShader* ps_) :
-		PostEffectBase(vs_, ps_)
+	SepiaPostEffect()
 	{
 		CreateConstantBuffer();
 	}

@@ -166,6 +166,7 @@
     <ClCompile Include="Src\App\PostProcess\NegaPosiPostEffect.cpp" />
     <ClCompile Include="Src\App\PostProcess\NormalPostEffect.cpp" />
     <ClCompile Include="Src\App\PostProcess\OutlinePostEffect.cpp" />
+    <ClCompile Include="Src\App\PostProcess\PostEffectBase.cpp" />
     <ClCompile Include="Src\App\PostProcess\PostProcessManager.cpp" />
     <ClCompile Include="Src\App\PostProcess\SepiaPostEffect.cpp" />
     <ClCompile Include="Src\App\ViewModel\ViewModel.cpp" />

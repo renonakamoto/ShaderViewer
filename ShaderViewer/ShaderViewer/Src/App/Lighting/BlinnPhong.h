@@ -16,6 +16,14 @@ private:
 	{
 		float Shininess;	//! ハイライトの強さ(低いほど強く光る)
 		float Pad[3];		//! サイズを16の倍数に合わせるためのパディング
+		
+		/**
+		* @brief コンストラクタ
+		*/
+		BlinnPhongBuffer():
+			Shininess(0.f),
+			Pad{20.f}
+		{}
 	};
 
 public:
@@ -23,7 +31,7 @@ public:
 	* @brief コンストラクタ
 	*/
 	BlinnPhong() :
-		m_BlinnPhongBuffer{ 20.f, {0.0f, 0.0f, 0.0f} }
+		m_BlinnPhongBuffer{}
 	{
 		CreateConstantBuffer();
 	}

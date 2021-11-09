@@ -9,11 +9,21 @@
 class Phong : public LightingBase
 {
 private:
-	//! フォンパラメータ構造体
+	/**
+	* @brief フォンパラメータ構造体
+	*/
 	struct PhongBuffer
 	{
 		float Shininess;	//! ハイライトの強さ(低いほど強く光る)
 		float Pad[3];		//! サイズを16の倍数に合わせるためのパディング
+
+		/**
+		* @brief コンストラクタ
+		*/
+		PhongBuffer():
+			Shininess(20.f),
+			Pad{0.f}
+		{}
 	};
 
 public:
@@ -21,7 +31,7 @@ public:
 	* @brief コンストラクタ
 	*/
 	Phong() :
-		m_PhongBuffer{ 20.f,{0.0f,0.0f,0.0f } }
+		m_PhongBuffer{}
 	{
 		CreateConstantBuffer();
 	}

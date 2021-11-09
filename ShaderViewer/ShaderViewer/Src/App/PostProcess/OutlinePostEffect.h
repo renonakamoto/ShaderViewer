@@ -17,9 +17,12 @@ private:
 	*/
 	struct OutlineBuffer
 	{
-		float Color[3];
-		float Pad;
+		float Color[3];	//! アウトラインの色
+		float Pad;		//! パディング
 
+		/**
+		* @brief コンストラクタ
+		*/
 		OutlineBuffer()
 		{
 			ZeroMemory(this, sizeof(OutlineBuffer));
@@ -30,8 +33,7 @@ public:
 	/**
 	* @brief コンストラクタ
 	*/
-	OutlinePostEffect(VertexShader* vs_, PixelShader* ps_) :
-		PostEffectBase(vs_, ps_)
+	OutlinePostEffect()
 	{
 		CreateConstantBuffer();
 	}

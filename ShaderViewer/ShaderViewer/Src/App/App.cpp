@@ -212,22 +212,28 @@ void App::InitPostProcess()
 {
 	auto shader_manager = ShaderManager::GetInstance();
 
-	std::unique_ptr<PostEffectBase> normal		= std::make_unique<NormalPostEffect>(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("2DPS"));
+	std::unique_ptr<PostEffectBase> normal		= std::make_unique<NormalPostEffect>();
+	normal.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("2DPS"));
 	m_PostProcessManager.Entry("Normal", std::move(normal));
 	
-	std::unique_ptr<PostEffectBase> blur		= std::make_unique<BlurPostEffect>(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("BlurPS"));
+	std::unique_ptr<PostEffectBase> blur		= std::make_unique<BlurPostEffect>();
+	blur.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("BlurPS"));
 	m_PostProcessManager.Entry("Blur", std::move(blur));
 
-	std::unique_ptr<PostEffectBase> monochrome	= std::make_unique<MonochromePostEffect>(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("MonochromePS"));
+	std::unique_ptr<PostEffectBase> monochrome	= std::make_unique<MonochromePostEffect>();
+	monochrome.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("MonochromePS"));
 	m_PostProcessManager.Entry("Monochrome", std::move(monochrome));
 
-	std::unique_ptr<PostEffectBase> negaposi	= std::make_unique<NegaPosiPostEffect>(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("NegaPosiPS"));
+	std::unique_ptr<PostEffectBase> negaposi	= std::make_unique<NegaPosiPostEffect>();
+	negaposi.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("NegaPosiPS"));
 	m_PostProcessManager.Entry("NegaPosi", std::move(negaposi));
 
-	std::unique_ptr<PostEffectBase> sepia		= std::make_unique<SepiaPostEffect>(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("SepiaPS"));
-	m_PostProcessManager.Entry("Sepia", std::move(sepia));	
+	std::unique_ptr<PostEffectBase> sepia		= std::make_unique<SepiaPostEffect>();
+	sepia.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("SepiaPS"));
+	m_PostProcessManager.Entry("Sepia", std::move(sepia));
 	
-	std::unique_ptr<PostEffectBase> outline		= std::make_unique<OutlinePostEffect>(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("OurlinePS"));
+	std::unique_ptr<PostEffectBase> outline		= std::make_unique<OutlinePostEffect>();
+	outline.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("OurlinePS"));
 	m_PostProcessManager.Entry("Outline", std::move(outline));
 }
 

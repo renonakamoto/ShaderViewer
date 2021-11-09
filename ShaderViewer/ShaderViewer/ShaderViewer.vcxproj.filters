@@ -201,6 +201,9 @@
     <ClCompile Include="Src\App\App.cpp">
       <Filter>Src\App</Filter>
     </ClCompile>
+    <ClCompile Include="Src\App\PostProcess\PostEffectBase.cpp">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Engine\Graphics\RenderTarget.h">

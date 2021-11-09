@@ -11,7 +11,6 @@ void ViewModel::Update()
 	{
 		m_Rot.y += 0.5f;
 	}
-	
 }
 
 void ViewModel::Render() const
@@ -34,7 +33,7 @@ void ViewModel::DrawGUI()
 	ImGui::Separator();
 	ImGui::DragFloat3("Pos", m_Pos.GetData(), 0.01f);
 	ImGui::DragFloat3("Sca", m_Scale.GetData(), 0.01f);
-	ImGui::DragFloat3("Rot", m_Rot.GetData(), 0.01f);
+	ImGui::DragFloat3("Rot", m_Rot.GetData(),0.5f);
 	ImGui::Checkbox("Rotate", &m_Rotate);
 	ImGui::End();
 }
