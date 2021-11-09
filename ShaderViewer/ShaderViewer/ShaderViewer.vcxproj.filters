@@ -1,0 +1,389 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="4.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <ItemGroup>
+    <Filter Include="Src">
+      <UniqueIdentifier>{51ca775d-95bb-4a33-8a07-21dd51e6ec7a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Assets">
+      <UniqueIdentifier>{c10ffcd6-ef02-482c-9044-6f8131abdc54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine">
+      <UniqueIdentifier>{55de9462-28cc-41df-a156-e20b515ae8bd}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Graphics">
+      <UniqueIdentifier>{c3221634-5a0c-4b1e-8ab4-fa1787f68020}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Input">
+      <UniqueIdentifier>{b8589796-9009-4335-a5d3-eae34b108cfe}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Model">
+      <UniqueIdentifier>{0fb6b710-b9da-4c0f-b528-4cbc8d56ca81}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Shader">
+      <UniqueIdentifier>{d21189fa-61e4-42f9-989c-81e9bde76dd2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Texture">
+      <UniqueIdentifier>{c22f7681-7fb4-45d6-9d02-6165113148e2}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Window">
+      <UniqueIdentifier>{75c8ad8d-6a62-4128-a235-51e7568cc749}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Model\ObjModel">
+      <UniqueIdentifier>{8d775d45-4213-4e8a-ba3d-dd2a984a4974}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App">
+      <UniqueIdentifier>{59a5950c-fc01-4609-b8a3-182ccd0b04df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\Camera">
+      <UniqueIdentifier>{63890c99-3c91-4846-9eca-d8755e4d8b48}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\Lighting">
+      <UniqueIdentifier>{9ab70440-6fb0-4f3d-a172-fcba04ccde9a}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\imGui">
+      <UniqueIdentifier>{981eee1e-99c0-46e4-a010-7933129ecc29}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Shader">
+      <UniqueIdentifier>{22b8c670-7358-47d9-8deb-a1ed8df14d54}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\ViewModel">
+      <UniqueIdentifier>{5edc21ef-10ff-4633-9506-bd8429f3fda8}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\Utility">
+      <UniqueIdentifier>{fc31f903-523f-429b-90e8-84422bc31162}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\Utility\Vector">
+      <UniqueIdentifier>{9f95f4a0-2daa-4637-a612-08ad25f1d545}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\PostProcess">
+      <UniqueIdentifier>{8ba1c070-1823-49d4-9657-40d3bbd0de04}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\Object">
+      <UniqueIdentifier>{76ed4fc6-5ae6-435a-8989-eff80aff1fa1}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\Object\Sprite">
+      <UniqueIdentifier>{4785a553-c839-4cbc-a480-345e3d0bc9c4}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\Engine\Sound">
+      <UniqueIdentifier>{c8c3d034-381c-43e1-9b25-d6f60ee4bef7}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\Object\Plane">
+      <UniqueIdentifier>{59f02e59-5249-4441-befa-02c1b70d7c77}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Src\App\Object\SkyDome">
+      <UniqueIdentifier>{001be061-1c23-4fdf-bc11-784c0d9efa2c}</UniqueIdentifier>
+    </Filter>
+  </ItemGroup>
+  <ItemGroup>
+    <ClCompile Include="Src\Engine\Graphics\RenderTarget.cpp">
+      <Filter>Src\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Graphics\DirectGraphics.cpp">
+      <Filter>Src\Engine\Graphics</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Input\InputManager.cpp">
+      <Filter>Src\Engine\Input</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Model\Model.cpp">
+      <Filter>Src\Engine\Model</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Model\ObjModel\ObjModel.cpp">
+      <Filter>Src\Engine\Model\ObjModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Shader\VertexShader.cpp">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Shader\PixelShader.cpp">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Shader\ShaderBase.cpp">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Sound\SoundManager.cpp">
+      <Filter>Src\Engine\Sound</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Texture\TextureManager.cpp">
+      <Filter>Src\Engine\Texture</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Window\Window.cpp">
+      <Filter>Src\Engine\Window</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Engine.cpp">
+      <Filter>Src\Engine</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\Utility.cpp">
+      <Filter>Src\App\Utility</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Lighting\LightingBase.cpp">
+      <Filter>Src\App\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Lighting\Phong.cpp">
+      <Filter>Src\App\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_tables.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_widgets.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_demo.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_draw.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_dx11.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_win32.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\Shader\ShaderManager.cpp">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\ViewModel\ViewModel.cpp">
+      <Filter>Src\App\ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Utility\Vector\DXVector.cpp">
+      <Filter>Src\App\Utility\Vector</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Lighting\LightingManager.cpp">
+      <Filter>Src\App\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Camera\Camera.cpp">
+      <Filter>Src\App\Camera</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Lighting\BlinnPhong.cpp">
+      <Filter>Src\App\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\ViewModel\ViewModelManager.cpp">
+      <Filter>Src\App\ViewModel</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\PostProcess\PostProcessManager.cpp">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\PostProcess\NormalPostEffect.cpp">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\PostProcess\BlurPostEffect.cpp">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Object\Sprite\Sprite.cpp">
+      <Filter>Src\App\Object\Sprite</Filter>
+    </ClCompile>
+    <ClCompile Include="Main.cpp">
+      <Filter>Src</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Object\SkyDome\SkyDome.cpp">
+      <Filter>Src\App\Object\SkyDome</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Object\Plane\Plane.cpp">
+      <Filter>Src\App\Object\Plane</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\PostProcess\MonochromePostEffect.cpp">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\PostProcess\NegaPosiPostEffect.cpp">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\PostProcess\SepiaPostEffect.cpp">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\PostProcess\OutlinePostEffect.cpp">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\Lighting\ToonShading.cpp">
+      <Filter>Src\App\Lighting</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\App\App.cpp">
+      <Filter>Src\App</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="Src\Engine\Graphics\RenderTarget.h">
+      <Filter>Src\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Graphics\DirectGraphics.h">
+      <Filter>Src\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Input\InputManager.h">
+      <Filter>Src\Engine\Input</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Model\Model.h">
+      <Filter>Src\Engine\Model</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Model\ObjModel\ObjModel.h">
+      <Filter>Src\Engine\Model\ObjModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Shader\ShaderBase.h">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Shader\VertexShader.h">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Shader\PixelShader.h">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Sound\SoundManager.h">
+      <Filter>Src\Engine\Sound</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Texture\TextureManager.h">
+      <Filter>Src\Engine\Texture</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Window\Window.h">
+      <Filter>Src\Engine\Window</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Engine.h">
+      <Filter>Src\Engine</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Graphics\GraphicsUtility.h">
+      <Filter>Src\Engine\Graphics</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\Utility.h">
+      <Filter>Src\App\Utility</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Lighting\LightingBase.h">
+      <Filter>Src\App\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Lighting\Phong.h">
+      <Filter>Src\App\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_win32.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_internal.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_rectpack.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_textedit.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_truetype.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imconfig.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_dx11.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\Shader\ShaderManager.h">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\ViewModel\ViewModel.h">
+      <Filter>Src\App\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Utility\Vector\DXVector.h">
+      <Filter>Src\App\Utility\Vector</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Lighting\LightingManager.h">
+      <Filter>Src\App\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Camera\Camera.h">
+      <Filter>Src\App\Camera</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Lighting\BlinnPhong.h">
+      <Filter>Src\App\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\App.h">
+      <Filter>Src\App</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\ViewModel\ViewModelManager.h">
+      <Filter>Src\App\ViewModel</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\PostProcess\PostProcessManager.h">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\PostProcess\PostEffectBase.h">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\PostProcess\NormalPostEffect.h">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\PostProcess\BlurPostEffect.h">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Object\Sprite\Sprite.h">
+      <Filter>Src\App\Object\Sprite</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Object\SkyDome\SkyDome.h">
+      <Filter>Src\App\Object\SkyDome</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Object\Plane\Plane.h">
+      <Filter>Src\App\Object\Plane</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\PostProcess\MonochromePostEffect.h">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\PostProcess\NegaPosiPostEffect.h">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\PostProcess\SepiaPostEffect.h">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\PostProcess\OutlinePostEffect.h">
+      <Filter>Src\App\PostProcess</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Lighting\ToonShading.h">
+      <Filter>Src\App\Lighting</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\App\Definition.h">
+      <Filter>Src\App</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <FxCompile Include="Src\Shader\SimpleVS.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\PhongPS.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\BlinnPhonePS.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\2DVertexShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\BlurPixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\DepthVertexShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\DepthPixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\MonochromePixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\SepiaPixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\NegaPosiPixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\OutlinePixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\CameraDepthVertexShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\UnlitPixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\2DPixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\ToonPixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+  </ItemGroup>
+</Project>
