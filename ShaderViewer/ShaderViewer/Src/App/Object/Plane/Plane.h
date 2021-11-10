@@ -21,10 +21,10 @@ public:
 	{}
 
 	/**
-	* @fn void Render()
+	* @fn void Draw()
 	* @brief 描画関数
 	*/
-	void Render();
+	void Draw();
 
 	/**
 	* @fn ViewModel* GetModel()

@@ -13,7 +13,7 @@ void ViewModel::Update()
 	}
 }
 
-void ViewModel::Render() const
+void ViewModel::Draw() const
 {
 	if (m_ObjModel) {
 		GRAPHICS->SetRasterizerMode(RasterizerMode::MODE_CULL_NONE);

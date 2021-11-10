@@ -30,7 +30,7 @@ public:
 	* @param[in] model_ ビュー用モデル
 	* @param[in] bgModel_ 背景用モデル
 	*/
-	void Render(const ViewModel& model_, const ViewModel* bgModel_) override;
+	void Draw(const ViewModel& model_, const ViewModel* bgModel_) override;
 
 	/**
 	* @fn void DrawGUI()

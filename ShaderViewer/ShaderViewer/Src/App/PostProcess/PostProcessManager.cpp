@@ -13,9 +13,9 @@ void PostProcessManager::Entry(const char* displayName_, std::unique_ptr<PostEff
 	m_PostEffectList.push_back(std::move(postEffect_));
 }
 
-void PostProcessManager::Render(const ViewModel& model_, const ViewModel* bgModel_)
+void PostProcessManager::Draw(const ViewModel& model_, const ViewModel* bgModel_)
 {
-	m_PostEffectList[m_CurrentID]->Render(model_, bgModel_);
+	m_PostEffectList[m_CurrentID]->Draw(model_, bgModel_);
 }
 
 void PostProcessManager::DrawGUI()

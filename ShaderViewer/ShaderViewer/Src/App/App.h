@@ -49,10 +49,10 @@ private:
 	void Update();
 
 	/**
-	* @fn void Render()
+	* @fn void Draw()
 	* @brief アプリケーションの描画を行う関数
 	*/
-	void Render();
+	void Draw();
 
 	/**
 	* @fn void SetUpDepthShader()

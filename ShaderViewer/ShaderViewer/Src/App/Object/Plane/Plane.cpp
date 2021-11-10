@@ -8,7 +8,7 @@ Plane::Plane()
 	m_ViewModel.SetScale(DXVector3(0.05f, 0.05f, 0.05f));
 }
 
-void Plane::Render()
+void Plane::Draw()
 {
-	m_ViewModel.Render();
+	m_ViewModel.Draw();
 }

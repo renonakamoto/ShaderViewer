@@ -3,7 +3,7 @@
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui.h"
 
-void SepiaPostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_)
+void SepiaPostEffect::Draw(const ViewModel& model_, const ViewModel* bgModel_)
 {
 	// レンダーターゲットをオフスクリーンに設定
 	GRAPHICS->SetRenderTarget(KindRT::RT_OFF_SCREEN);
@@ -12,7 +12,7 @@ void SepiaPostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_)
 	LightingManager::GetInstance()->SetupShader();
 
 	// モデルの描画
-	model_.Render();
+	model_.Draw();
 
 	// ポストエフェクト
 	GRAPHICS->SetRenderTarget(KindRT::RT_ON_SCREEN);

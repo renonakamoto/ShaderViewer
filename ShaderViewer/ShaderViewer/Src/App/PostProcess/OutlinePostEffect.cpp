@@ -3,13 +3,13 @@
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui.h"
 
-void OutlinePostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_)
+void OutlinePostEffect::Draw(const ViewModel& model_, const ViewModel* bgModel_)
 {
 	// モデルをオフスクリーンに描画
 	GRAPHICS->SetRenderTarget(KindRT::RT_OFF_SCREEN);
 	LightingManager::GetInstance()->SetupShader();
 
-	model_.Render();
+	model_.Draw();
 
 	// シャドウマップに深度値を描画
 	GRAPHICS->ClearRenderTarget(KindRT::RT_SHADOWMAP);
@@ -18,13 +18,13 @@ void OutlinePostEffect::Render(const ViewModel& model_, const ViewModel* bgModel
 	ID3D11DeviceContext* context = GRAPHICS->GetContext();
 	context->VSSetShader(ShaderManager::GetInstance()->GetVertexShader("CameraDepthVS")->GetShaderInterface(), nullptr, 0U);
 	context->PSSetShader(ShaderManager::GetInstance()->GetPixelShader("DepthPS")->GetShaderInterface(), nullptr, 0U);
-	model_.Render();
+	model_.Draw();
 	
 	const int bg_model_num = 2;
 	for (int i = 0; i < bg_model_num; ++i)
 	{
 		if (&bgModel_[i] == nullptr) {
-			bgModel_[i].Render();
+			bgModel_[i].Draw();
 		}
 	}
 

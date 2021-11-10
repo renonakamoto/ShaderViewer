@@ -3,7 +3,7 @@
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui.h"
 
-void NegaPosiPostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_)
+void NegaPosiPostEffect::Draw(const ViewModel& model_, const ViewModel* bgModel_)
 {
 	// レンダーターゲットをオフスクリーンに設定
 	GRAPHICS->SetRenderTarget(KindRT::RT_OFF_SCREEN);
@@ -12,7 +12,7 @@ void NegaPosiPostEffect::Render(const ViewModel& model_, const ViewModel* bgMode
 	LightingManager::GetInstance()->SetupShader();
 
 	// モデルの描画
-	model_.Render();
+	model_.Draw();
 
 	// ポストエフェクト
 	GRAPHICS->SetRenderTarget(KindRT::RT_ON_SCREEN);

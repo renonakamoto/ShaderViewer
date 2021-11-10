@@ -34,12 +34,12 @@ public:
 	bool Init(VertexShader* vs_, PixelShader* ps_);
 
 	/**
-	* @fn virtual void Render(const ViewModel& model_, const ViewModel* bgModel_) = 0
+	* @fn virtual void Draw(const ViewModel& model_, const ViewModel* bgModel_) = 0
 	* @brief 描画関数
 	* @param[in] model_ ビュー用モデル
 	* @param[in] bgModel_ 背景用モデル
 	*/
-	virtual void Render(const ViewModel& model_, const ViewModel* bgModel_) = 0;
+	virtual void Draw(const ViewModel& model_, const ViewModel* bgModel_) = 0;
 	
 	/**
 	* @fn virtual void DrawGUI() = 0

@@ -2,7 +2,7 @@
 #include "../Lighting/LightingManager.h"
 #include "../../Engine/Engine.h"
 
-void MonochromePostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_)
+void MonochromePostEffect::Draw(const ViewModel& model_, const ViewModel* bgModel_)
 {
 	// レンダーターゲットをオフスクリーンに設定
 	GRAPHICS->SetRenderTarget(KindRT::RT_OFF_SCREEN);
@@ -11,7 +11,7 @@ void MonochromePostEffect::Render(const ViewModel& model_, const ViewModel* bgMo
 	LightingManager::GetInstance()->SetupShader();
 
 	// モデルの描画
-	model_.Render();
+	model_.Draw();
 
 	// ポストエフェクト
 	GRAPHICS->SetRenderTarget(KindRT::RT_ON_SCREEN);

@@ -45,10 +45,10 @@ public:
 	void Update();
 
 	/**
-	* @fn void Render()
+	* @fn void Draw()
 	* @brief 描画関数
 	*/
-	void Render() const;
+	void Draw() const;
 
 	/**
 	* @fn void DrawGUI()

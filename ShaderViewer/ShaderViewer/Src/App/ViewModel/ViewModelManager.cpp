@@ -10,11 +10,11 @@ void ViewModelManager::Update()
 	m_Model.get()->Update();
 }
 
-void ViewModelManager::Render()
+void ViewModelManager::Draw()
 {
 	if (!m_Model) return;
 	
-	m_Model.get()->Render();
+	m_Model.get()->Draw();
 }
 
 void ViewModelManager::DrawGUI()

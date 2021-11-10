@@ -32,12 +32,12 @@ public:
 	void Entry(const char* displayName_, std::unique_ptr<PostEffectBase> postEffect_);
 
 	/**
-	* @fn void Render(const ViewModel& model_, const ViewModel* bgModel_)
+	* @fn void Draw(const ViewModel& model_, const ViewModel* bgModel_)
 	* @brief 描画関数
 	* @param[in] model_ ビュー用モデル
 	* @param[in] bgModel_ 背景用モデル
 	*/
-	void Render(const ViewModel& model_, const ViewModel* bgModel_);
+	void Draw(const ViewModel& model_, const ViewModel* bgModel_);
 	
 	/**
 	* @fn void DrawGUI()

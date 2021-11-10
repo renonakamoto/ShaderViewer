@@ -39,7 +39,7 @@ void App::Run()
 	Update();
 	
 	// 描画
-	Render();
+	Draw();
 }
 
 void App::Update()
@@ -48,7 +48,7 @@ void App::Update()
 	m_Camera.get()->Update();
 }
 
-void App::Render()
+void App::Draw()
 {
 	// レンダーターゲットをクリア
 	GRAPHICS->ClearRenderTarget();
@@ -60,8 +60,8 @@ void App::Render()
 
 		// 背景モデルを先に描画
 		SetUpUnlitShader();
-		m_SkyDome.Render();
-		m_Plane.Render();
+		m_SkyDome.Draw();
+		m_Plane.Draw();
 
 		// モデルの描画
 		std::vector<ViewModel*> models = {
@@ -69,7 +69,7 @@ void App::Render()
 			m_SkyDome.GetModel(),
 			m_Plane.GetModel()
 		};
-		m_PostProcessManager.Render(*models[0], models[1]);
+		m_PostProcessManager.Draw(*models[0], models[1]);
 	}
 
 	// GUIの描画
@@ -269,5 +269,5 @@ void App::DrawDepth()
 	SetUpDepthShader();
 	
 	//  描画
-	m_ModelManager.GetModel()->Render();
+	m_ModelManager.GetModel()->Draw();
 }

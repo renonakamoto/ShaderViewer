@@ -9,7 +9,7 @@ SkyDome::SkyDome()
 	m_ViewModel.SetScale(DXVector3(1.0f, 1.0f, 1.0f));
 }
 
-void SkyDome::Render()
+void SkyDome::Draw()
 {
-	m_ViewModel.Render();
+	m_ViewModel.Draw();
 }
