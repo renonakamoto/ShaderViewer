@@ -13,7 +13,7 @@ void Phong::SetUpShader() const
 
 void Phong::DrawGUI()
 {
-	ImGui::SliderFloat("", &m_PhongBuffer.Shininess, 5.0f, 200.0f);
+	ImGui::SliderFloat("", &m_PhongBuffer.Shininess, m_MinShiness, m_MaxShiness);
 }
 
 bool Phong::CreateConstantBuffer()

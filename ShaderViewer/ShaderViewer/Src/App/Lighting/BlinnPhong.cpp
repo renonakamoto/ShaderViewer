@@ -13,7 +13,7 @@ void BlinnPhong::SetUpShader() const
 
 void BlinnPhong::DrawGUI()
 {
-	ImGui::SliderFloat("", &m_BlinnPhongBuffer.Shininess, 5.0f, 200.0f);
+	ImGui::SliderFloat("", &m_BlinnPhongBuffer.Shininess, m_MinShiness, m_MaxShiness);
 }
 
 bool BlinnPhong::CreateConstantBuffer()

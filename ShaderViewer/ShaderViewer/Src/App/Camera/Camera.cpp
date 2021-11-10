@@ -1,5 +1,6 @@
 #include "Camera.h"
 #include "../../Engine/Engine.h"
+#include "../../App/Config.h"
 
 void Camera::Update()
 {
@@ -16,12 +17,11 @@ void Camera::Update()
 	DirectX::XMStoreFloat4x4(&cb->View, DirectX::XMMatrixTranspose(view_matrix));
 
 	// ProjectionçsóÒÇÃê›íË
-	constexpr float fov = DirectX::XMConvertToRadians(45.0f);
+	float fov = DirectX::XMConvertToRadians(ConfigParameter::m_CameraFov);
 	float aspect = static_cast<float>(WINDOW->GetClientWidth()) / static_cast<float>(WINDOW->GetClientHeight());
-	float near_z = 0.1f;
-	float far_z  = 1000.0f;
+	float near_z = ConfigParameter::m_CameraNear;
+	float far_z  = ConfigParameter::m_CameraFar;
 	DirectX::XMMATRIX proj_matrix = DirectX::XMMatrixPerspectiveFovLH(fov, aspect, near_z, far_z);
 
 	DirectX::XMStoreFloat4x4(&cb->Projection, DirectX::XMMatrixTranspose(proj_matrix));
 }
-

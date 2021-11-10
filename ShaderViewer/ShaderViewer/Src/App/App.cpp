@@ -1,6 +1,4 @@
 #include "App.h"
-#include "../Engine/Engine.h"
-#include "../Engine/Shader/ShaderManager.h"
 #include "Lighting/Phong.h"
 #include "Lighting/BlinnPhong.h"
 #include "Lighting/ToonShading.h"
@@ -8,6 +6,8 @@
 #include "PostProcess/NegaPosiPostEffect.h"
 #include "PostProcess/SepiaPostEffect.h"
 #include "PostProcess/OutlinePostEffect.h"
+#include "../Engine/Engine.h"
+#include "../Engine/Shader/ShaderManager.h"
 #include "../Engine/imGui/imgui_impl_dx11.h"
 #include "../Engine/imGui/imgui_impl_win32.h"
 
@@ -20,11 +20,11 @@ bool App::Init()
 		return false;
 	}
 	// シェーダーの初期化
-	if (InitShader() == false) {
+	if (InitShaders() == false) {
 		return false;
 	}
 	// ライティングオブジェクトの初期化
-	if (InitLigting() == false) {
+	if (InitLigtings() == false) {
 		return false;
 	}
 	// ポストプロセスオブジェクトの初期化
@@ -113,7 +113,7 @@ bool App::InitModels()
 	return true;
 }
 
-bool App::InitShader()
+bool App::InitShaders()
 {
 	if (ShaderManager::GetInstance()->Load("Assets/Shader/SimpleVS.cso", "VS", KindShader::VS) == false)
 	{
@@ -179,7 +179,7 @@ bool App::InitShader()
 	return true;
 }
 
-bool App::InitLigting()
+bool App::InitLigtings()
 {
 	auto shader_manager = ShaderManager::GetInstance();
 	

@@ -1,5 +1,5 @@
 #include "PostProcessManager.h"
-#include "../Definition.h"
+#include "../Config.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui_impl_dx11.h"
 
@@ -26,7 +26,7 @@ void PostProcessManager::DrawGUI()
 	float height = window_height / 3.0f * 2.0f;
 
 	ImGui::SetNextWindowPos(ImVec2(0.0f, height), ImGuiCond_Always);
-	ImGui::SetNextWindowSize(ImVec2(GUI_WIDTH, window_height), ImGuiCond_Always);
+	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, window_height), ImGuiCond_Always);
 	ImGui::Begin("PostProcessList");
 	ImGui::Separator();
 	ImGui::Text("List1");
@@ -34,8 +34,8 @@ void PostProcessManager::DrawGUI()
 	ImGui::End();
 
 
-	ImGui::SetNextWindowPos(ImVec2(window_width - GUI_WIDTH, height), ImGuiCond_Always);
-	ImGui::SetNextWindowSize(ImVec2(GUI_WIDTH, GUI_HEIGHT), ImGuiCond_Always);
+	ImGui::SetNextWindowPos(ImVec2(window_width - ConfigParameter::m_GuiWidth, height), ImGuiCond_Always);
+	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, ConfigParameter::m_GuiHeight), ImGuiCond_Always);
 	ImGui::Begin("PostProcessParam");
 	ImGui::Separator();
 	m_PostEffectList[m_CurrentID]->DrawGUI();

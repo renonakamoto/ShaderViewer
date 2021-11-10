@@ -2,6 +2,7 @@
 #include "DirectGraphics.h"
 #include "../Engine.h"
 #include "../../App/Lighting/LightingBase.h"
+#include "../../App/Config.h"
 
 #pragma comment(lib,"d3d11.lib")
 
@@ -425,7 +426,7 @@ bool DirectGraphics::CreateRasterizer()
 void DirectGraphics::SetUpLight()
 {
     //ライトの位置
-    m_LightPos = DirectX::XMFLOAT3(-20.0f, 20.0f, 5.0f);
+    m_LightPos = ConfigParameter::m_LightPos;
     DirectX::XMStoreFloat4(&m_ConstantBufferData.Light, DirectX::XMVector3Normalize(DirectX::XMVectorSet(m_LightPos.x, m_LightPos.y, m_LightPos.z, 0.0f)));
 
     // View行列

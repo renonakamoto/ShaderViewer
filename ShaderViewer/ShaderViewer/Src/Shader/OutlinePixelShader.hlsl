@@ -60,7 +60,7 @@ float4 ps_main(PS_IN input) : SV_TARGET
     offset_depth /= 8.0;
     
     // 深度値の差が大きければラインの色にする
-    if (abs(depth - offset_depth) > 0.000005)
+    if (abs(depth - offset_depth) > 0.00005)
     {
         color.xyz = Color;
     }

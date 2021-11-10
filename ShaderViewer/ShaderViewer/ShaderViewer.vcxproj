@@ -153,6 +153,7 @@
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Src\App\App.cpp" />
     <ClCompile Include="Src\App\Camera\Camera.cpp" />
+    <ClCompile Include="Src\App\Config.cpp" />
     <ClCompile Include="Src\App\Lighting\BlinnPhong.cpp" />
     <ClCompile Include="Src\App\Lighting\LightingBase.cpp" />
     <ClCompile Include="Src\App\Lighting\LightingManager.cpp" />
@@ -198,7 +199,7 @@
     <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_truetype.h" />
     <ClInclude Include="Src\App\App.h" />
     <ClInclude Include="Src\App\Camera\Camera.h" />
-    <ClInclude Include="Src\App\Definition.h" />
+    <ClInclude Include="Src\App\Config.h" />
     <ClInclude Include="Src\App\Lighting\BlinnPhong.h" />
     <ClInclude Include="Src\App\Lighting\LightingBase.h" />
     <ClInclude Include="Src\App\Lighting\LightingManager.h" />

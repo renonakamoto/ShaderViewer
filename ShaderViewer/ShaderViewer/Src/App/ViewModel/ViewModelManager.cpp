@@ -1,5 +1,5 @@
 #include "ViewModelManager.h"
-#include "../Definition.h"
+#include "../Config.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui_impl_dx11.h"
 
@@ -20,7 +20,7 @@ void ViewModelManager::Render()
 void ViewModelManager::DrawGUI()
 {
 	ImGui::SetNextWindowPos(ImVec2(0.f, 0.f), ImGuiCond_Always);
-	ImGui::SetNextWindowSize(ImVec2(GUI_WIDTH, GUI_HEIGHT), ImGuiCond_Always);
+	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, ConfigParameter::m_GuiHeight), ImGuiCond_Always);
 	ImGui::Begin("ModelList");
 	ImGui::Separator();
 	ImGui::Text("List");

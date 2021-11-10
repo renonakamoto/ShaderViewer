@@ -21,7 +21,7 @@ private:
 		* @brief コンストラクタ
 		*/
 		BlinnPhongBuffer():
-			Shininess(0.f),
+			Shininess(20.f),
 			Pad{20.f}
 		{}
 	};
@@ -31,7 +31,9 @@ public:
 	* @brief コンストラクタ
 	*/
 	BlinnPhong() :
-		m_BlinnPhongBuffer{}
+		m_BlinnPhongBuffer{},
+		m_MinShiness(5.0f),
+		m_MaxShiness(200.0f)
 	{
 		CreateConstantBuffer();
 	}
@@ -65,6 +67,8 @@ private:
 private:
 	BlinnPhongBuffer	 m_BlinnPhongBuffer;	//! BlinnPhong用構造体変数
 	ComPtr<ID3D11Buffer> m_ConstantBuffer;		//! コンストバッファ
+	const float			 m_MinShiness;			//! ハイライトの強さの最小値
+	const float			 m_MaxShiness;			//! ハイライトの強さの最大値
 };
 
 #endif

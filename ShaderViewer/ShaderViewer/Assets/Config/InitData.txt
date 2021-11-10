@@ -1,0 +1,16 @@
+# InitData
+
+
+# Camera
+CameraFov  = 45.0
+CameraNear = 0.5
+CameraFar  = 1000.0
+
+
+# GUI
+GuiWidth   = 250.0
+GuiHeight  = 240.0
+
+
+# Light
+LightPos   = -20.0 20.0 5.0

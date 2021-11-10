@@ -204,6 +204,9 @@
     <ClCompile Include="Src\App\PostProcess\PostEffectBase.cpp">
       <Filter>Src\App\PostProcess</Filter>
     </ClCompile>
+    <ClCompile Include="Src\App\Config.cpp">
+      <Filter>Src\App</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Engine\Graphics\RenderTarget.h">
@@ -338,7 +341,7 @@
     <ClInclude Include="Src\App\Lighting\ToonShading.h">
       <Filter>Src\App\Lighting</Filter>
     </ClInclude>
-    <ClInclude Include="Src\App\Definition.h">
+    <ClInclude Include="Src\App\Config.h">
       <Filter>Src\App</Filter>
     </ClInclude>
   </ItemGroup>

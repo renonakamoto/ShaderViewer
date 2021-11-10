@@ -1,5 +1,5 @@
 #include "LightingManager.h"
-#include "../Definition.h"
+#include "../Config.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui_impl_dx11.h"
 
@@ -33,15 +33,15 @@ void LightingManager::DrawGUI()
 	float window_height = WINDOW->GetClientHeight();
 	
 	ImGui::SetNextWindowPos(ImVec2(0.0f, window_height/3.0f), ImGuiCond_Always);
-	ImGui::SetNextWindowSize(ImVec2(GUI_WIDTH, GUI_HEIGHT), ImGuiCond_Always);
+	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, ConfigParameter::m_GuiHeight), ImGuiCond_Always);
 	ImGui::Begin("ShaderList");
 	ImGui::Separator();
 	ImGui::Text("List");
 	ImGui::ListBox("", &m_CurrentSelectShaderId, m_LightingNamesList.data(), static_cast<int>(m_LightingNamesList.size()));
 	ImGui::End();
 	
-	ImGui::SetNextWindowPos(ImVec2(window_width - GUI_WIDTH, window_height / 3.0f), ImGuiCond_Always);
-	ImGui::SetNextWindowSize(ImVec2(GUI_WIDTH, GUI_HEIGHT), ImGuiCond_Always);
+	ImGui::SetNextWindowPos(ImVec2(window_width - ConfigParameter::m_GuiWidth, window_height / 3.0f), ImGuiCond_Always);
+	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, ConfigParameter::m_GuiHeight), ImGuiCond_Always);
 	ImGui::Begin("ShaderParam");
 	m_LightingList[m_CurrentSelectShaderId]->DrawGUI();
 	ImGui::End();

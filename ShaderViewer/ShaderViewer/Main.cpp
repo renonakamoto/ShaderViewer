@@ -4,6 +4,8 @@
 #include <crtdbg.h>
 #endif
 
+#include "Src/App/Config.h"
+
 #include "Src/Engine/Engine.h"
 #include "Src/Engine/imGui/imgui.h"
 #include "Src/Engine/imGui/imgui_impl_win32.h"
@@ -40,6 +42,9 @@ int APIENTRY WinMain(
 	// メモリリークチェック
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
+
+	// Configの読み込み
+	ConfigParameter::Load();
 
 	//　Engineの初期化
 	if (Engine::GetInstance()->Init(1280, 720, "ShaderViewer", hInstance) == false)

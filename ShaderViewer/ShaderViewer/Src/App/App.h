@@ -85,14 +85,14 @@ private:
 	* @brief シェーダーの初期化関数
 	* @return bool 成功したかどうか
 	*/
-	bool InitShader();
+	bool InitShaders();
 
 	/**
-	* @fn bool InitLigting()
+	* @fn bool InitLigtings()
 	* @brief ライティングの初期化関数
 	* @return bool 成功したかどうか
 	*/
-	bool InitLigting();
+	bool InitLigtings();
 
 	/**
 	* @fn bool InitPostProcess()

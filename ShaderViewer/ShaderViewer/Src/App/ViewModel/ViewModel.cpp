@@ -1,5 +1,5 @@
 #include "ViewModel.h"
-#include "../Definition.h"
+#include "../Config.h"
 #include "../Lighting/LightingManager.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/Shader/ShaderManager.h"
@@ -27,8 +27,8 @@ void ViewModel::DrawGUI()
 {
 	float window_width  = WINDOW->GetClientWidth();
 
-	ImGui::SetNextWindowPos(ImVec2(window_width - GUI_WIDTH, 0.0f), ImGuiCond_Always);
-	ImGui::SetNextWindowSize(ImVec2(GUI_WIDTH, GUI_HEIGHT), ImGuiCond_Always);
+	ImGui::SetNextWindowPos(ImVec2(window_width - ConfigParameter::m_GuiWidth, 0.0f), ImGuiCond_Always);
+	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, ConfigParameter::m_GuiHeight), ImGuiCond_Always);
 	ImGui::Begin("TransForm");
 	ImGui::Separator();
 	ImGui::DragFloat3("Pos", m_Pos.GetData(), 0.01f);
