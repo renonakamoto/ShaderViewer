@@ -1,4 +1,4 @@
-#include "PostEffectBase.h"
+﻿#include "PostEffectBase.h"
 
 bool PostEffectBase::Init(VertexShader* vs_, PixelShader* ps_)
 {

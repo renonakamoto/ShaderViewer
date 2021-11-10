@@ -1,4 +1,4 @@
-#ifndef SKY_DOME_H_
+﻿#ifndef SKY_DOME_H_
 #define SKY_DOME_H_
 
 #include "../../ViewModel/ViewModel.h"

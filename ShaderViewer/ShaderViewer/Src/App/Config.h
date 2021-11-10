@@ -1,29 +1,29 @@
-#ifndef CONFIG_H_
+ï»¿#ifndef CONFIG_H_
 #define CONFIG_H_
 
 #include "../Utility/Vector/DXVector.h"
 
 /**
-* @brief İ’èƒpƒ‰ƒ[ƒ^‚ğ•Û‚·‚éƒNƒ‰ƒX
+* @brief è¨­å®šãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’ä¿æŒã™ã‚‹ã‚¯ãƒ©ã‚¹
 */
 class ConfigParameter
 {
 public:
 	/**
 	* @fn void Load()
-	* @brief Configƒf[ƒ^‚Ì“Ç‚İ‚İŠÖ”
+	* @brief Configãƒ‡ãƒ¼ã‚¿ã®èª­ã¿è¾¼ã¿é–¢æ•°
 	*/
 	static void Load();
 
 public:
-	static float m_CameraFov;	//! ƒJƒƒ‰‹–ì
-	static float m_CameraNear;	//! ƒJƒƒ‰near
-	static float m_CameraFar;	//! ƒJƒƒ‰far
+	static float m_CameraFov;	//! ã‚«ãƒ¡ãƒ©è¦–é‡
+	static float m_CameraNear;	//! ã‚«ãƒ¡ãƒ©near
+	static float m_CameraFar;	//! ã‚«ãƒ¡ãƒ©far
 
-	static float m_GuiWidth;	//! GUI‚Ì‰¡•
-	static float m_GuiHeight;	//! GUI‚Ìc•
+	static float m_GuiWidth;	//! GUIã®æ¨ªå¹…
+	static float m_GuiHeight;	//! GUIã®ç¸¦å¹…
 
-	static DXVector3 m_LightPos;//! ƒ‰ƒCƒg‚ÌÀ•W
+	static DXVector3 m_LightPos;//! ãƒ©ã‚¤ãƒˆã®åº§æ¨™
 };
 
 #endif

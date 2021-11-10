@@ -1,4 +1,4 @@
-#ifdef _DEBUG
+ï»¿#ifdef _DEBUG
 #define _CRTDBG_MAP_ALLOC
 #include <stdlib.h>
 #include <crtdbg.h>
@@ -25,12 +25,12 @@
 #pragma comment(lib, "winmm.lib")
 
 /*
-	ImGuiƒ‰ƒCƒuƒ‰ƒŠ‚Ì‰Šú‰»ŠÖ”
+	ImGuiãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®åˆæœŸåŒ–é–¢æ•°
 */
 bool InitGui();
 
 /*
-	ƒGƒ“ƒgƒŠ[ƒ|ƒCƒ“ƒg
+	ã‚¨ãƒ³ãƒˆãƒªãƒ¼ãƒã‚¤ãƒ³ãƒˆ
 */
 int APIENTRY WinMain(
 	_In_	  HINSTANCE hInstance,
@@ -39,26 +39,26 @@ int APIENTRY WinMain(
 	_In_	  INT       nCmdShow)
 {
 #ifdef _DEBUG
-	// ƒƒ‚ƒŠƒŠ[ƒNƒ`ƒFƒbƒN
+	// ãƒ¡ãƒ¢ãƒªãƒªãƒ¼ã‚¯ãƒã‚§ãƒƒã‚¯
 	_CrtSetDbgFlag(_CRTDBG_ALLOC_MEM_DF | _CRTDBG_LEAK_CHECK_DF);
 #endif
 
-	// Config‚Ì“Ç‚İ‚İ
+	// Configã®èª­ã¿è¾¼ã¿
 	ConfigParameter::Load();
 
-	//@Engine‚Ì‰Šú‰»
+	//ã€€Engineã®åˆæœŸåŒ–
 	if (Engine::GetInstance()->Init(1280, 720, "ShaderViewer", hInstance) == false)
 	{
 		return -1;
 	}
 	
-	// ImGui‚Ì‰Šú‰»
+	// ImGuiã®åˆæœŸåŒ–
 	if (InitGui() == false)
 	{
 		return -2;
 	}
 
-	// ƒAƒvƒŠ‚Ì‰Šú‰»
+	// ã‚¢ãƒ—ãƒªã®åˆæœŸåŒ–
 	if (APP->Init() == false)
 	{
 		return -3;
@@ -86,16 +86,16 @@ int APIENTRY WinMain(
 		}
 	}
 
-	// ImGuiƒ‰ƒCƒuƒ‰ƒŠ‚Ì‰ğ•ú
+	// ImGuiãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®è§£æ”¾
 	ImGui::DestroyContext();
-	// Enigine‚Ì‰ğ•ú
+	// Enigineã®è§£æ”¾
 	Engine::GetInstance()->Release();
 
 	return 0;
 }
 
 /*
-	ImGuiƒ‰ƒCƒuƒ‰ƒŠ‚Ì‰Šú‰»
+	ImGuiãƒ©ã‚¤ãƒ–ãƒ©ãƒªã®åˆæœŸåŒ–
 */
 bool InitGui()
 {

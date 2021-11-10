@@ -1,4 +1,4 @@
-#ifndef OUTLINE_POST_EFFECT_H_
+ï»¿#ifndef OUTLINE_POST_EFFECT_H_
 #define OUTLINE_POST_EFFECT_H_
 
 #include "PostEffectBase.h"
@@ -7,21 +7,21 @@
 #include "../../Engine/Shader/ShaderManager.h"
 
 /**
-* @brief ƒAƒEƒgƒ‰ƒCƒ“ˆ—‚ğs‚¤ƒNƒ‰ƒX
+* @brief ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³å‡¦ç†ã‚’è¡Œã†ã‚¯ãƒ©ã‚¹
 */
 class OutlinePostEffect : public PostEffectBase
 {
 private:
 	/**
-	* @brief ƒAƒEƒgƒ‰ƒCƒ“ƒpƒ‰ƒ[ƒ^\‘¢‘Ì
+	* @brief ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ§‹é€ ä½“
 	*/
 	struct OutlineBuffer
 	{
-		float Color[3];	//! ƒAƒEƒgƒ‰ƒCƒ“‚ÌF
-		float Pad;		//! ƒpƒfƒBƒ“ƒO
+		float Color[3];	//! ã‚¢ã‚¦ãƒˆãƒ©ã‚¤ãƒ³ã®è‰²
+		float Pad;		//! ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°
 
 		/**
-		* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		*/
 		OutlineBuffer()
 		{
@@ -31,7 +31,7 @@ private:
 
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	OutlinePostEffect()
 	{
@@ -39,36 +39,36 @@ public:
 	}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~OutlinePostEffect()
 	{}
 
 	/**
 	* @fn void Render(const ViewModel& model_, const ViewModel* bgModel_)
-	* @brief •`‰æŠÖ”
-	* @param[in] model_ ƒrƒ…[—pƒ‚ƒfƒ‹
-	* @param[in] bgModel_ ”wŒi—pƒ‚ƒfƒ‹
+	* @brief æç”»é–¢æ•°
+	* @param[in] model_ ãƒ“ãƒ¥ãƒ¼ç”¨ãƒ¢ãƒ‡ãƒ«
+	* @param[in] bgModel_ èƒŒæ™¯ç”¨ãƒ¢ãƒ‡ãƒ«
 	*/
 	void Render(const ViewModel& model_, const ViewModel* bgModel_) override;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI() override;
 
 private:
 	/**
 	* @fn bool CreateConstantBuffer()
-	* @brief ’è”ƒoƒbƒtƒ@ì¬ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief å®šæ•°ãƒãƒƒãƒ•ã‚¡ä½œæˆé–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool CreateConstantBuffer();
 
 private:
 	OutlineBuffer		 m_OutlineBuffer;
-	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! ƒRƒ“ƒXƒgƒoƒbƒtƒ@
+	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! ã‚³ãƒ³ã‚¹ãƒˆãƒãƒƒãƒ•ã‚¡
 
 };
 

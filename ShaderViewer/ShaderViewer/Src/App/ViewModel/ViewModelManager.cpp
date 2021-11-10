@@ -1,4 +1,4 @@
-#include "ViewModelManager.h"
+ï»¿#include "ViewModelManager.h"
 #include "../Config.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui_impl_dx11.h"
@@ -37,10 +37,10 @@ void ViewModelManager::DrawGUI()
 
 bool ViewModelManager::CreateModel(const char* fileName, const char* displayName_)
 {
-	// ƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ
+	// ãƒ¢ãƒ‡ãƒ«ã®èª­ã¿è¾¼ã¿
 	m_ObjModels.push_back(std::make_unique<ObjModel>());
 	if (m_ObjModels[m_ObjModels.size() - 1].get()->Load(fileName)) {
-		// “Ç‚İ‚İ‚ª¬Œ÷‚µ‚½‚çƒŠƒXƒg‚É’Ç‰Á
+		// èª­ã¿è¾¼ã¿ãŒæˆåŠŸã—ãŸã‚‰ãƒªã‚¹ãƒˆã«è¿½åŠ 
 		m_ModelsNameList.push_back(displayName_);
 		m_Model.get()->SetModel(m_ObjModels[m_CurrentModelID].get());
 		return true;

@@ -1,34 +1,34 @@
-#ifndef TOON_SHADING_H_
+ï»¿#ifndef TOON_SHADING_H_
 #define TOON_SHADING_H_
 
 #include "LightingBase.h"
 
 /**
-* @brief ToonShaderƒNƒ‰ƒX
+* @brief ToonShaderã‚¯ãƒ©ã‚¹
 */
 class ToonShading : public LightingBase
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	ToonShading();
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~ToonShading()
 	{}
 
 	/**
 	* @fn void SetUpShader()
-	* @brief ƒVƒF[ƒ_[ƒZƒbƒgŠÖ”
+	* @brief ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã‚»ãƒƒãƒˆé–¢æ•°
 	*/
 	void SetUpShader() const override;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief •`‰æGUIŠÖ”
+	* @brief æç”»GUIé–¢æ•°
 	*/
 	void DrawGUI() override;
 

@@ -1,17 +1,17 @@
-#ifndef VIEW_MODEL_H_
+ï»¿#ifndef VIEW_MODEL_H_
 #define VIEW_MODEL_H_
 
 #include "../../Utility/Vector/DXVector.h"
 #include "../../Engine/Model/ObjModel/ObjModel.h"
 
 /**
-* @brief ƒrƒ…[ƒ‚ƒfƒ‹‚Ì§Œä‚ğs‚¤ƒNƒ‰ƒX
+* @brief ãƒ“ãƒ¥ãƒ¼ãƒ¢ãƒ‡ãƒ«ã®åˆ¶å¾¡ã‚’è¡Œã†ã‚¯ãƒ©ã‚¹
 */
 class ViewModel
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	ViewModel() :
 		ViewModel(
@@ -22,7 +22,7 @@ public:
 	{}
 
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	ViewModel(DXVector3 pos_, DXVector3 scale_, DXVector3 rot_, ObjModel* model_):
 		m_Pos(pos_),
@@ -33,96 +33,96 @@ public:
 	{}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~ViewModel(){}
 	
 	/**
 	* @fn void Update()
-	* @brief XVŠÖ”
-	* @details ƒrƒ…[ƒ‚ƒfƒ‹‚ÌXV‚ğs‚¤
+	* @brief æ›´æ–°é–¢æ•°
+	* @details ãƒ“ãƒ¥ãƒ¼ãƒ¢ãƒ‡ãƒ«ã®æ›´æ–°ã‚’è¡Œã†
 	*/
 	void Update();
 
 	/**
 	* @fn void Render()
-	* @brief •`‰æŠÖ”
+	* @brief æç”»é–¢æ•°
 	*/
 	void Render() const;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æ
-	* @details ƒgƒ‰ƒ“ƒXƒtƒH[ƒ€î•ñ‚ÌGUI‚ğ•`‰æ‚·‚é
+	* @brief GUIæç”»
+	* @details ãƒˆãƒ©ãƒ³ã‚¹ãƒ•ã‚©ãƒ¼ãƒ æƒ…å ±ã®GUIã‚’æç”»ã™ã‚‹
 	*/
 	void DrawGUI();
 
 public:
 	/**
 	* @fn DXVector3 GetPos()
-	* @brief À•Wî•ñæ“¾ŠÖ”
-	* @return DXVector3 À•Wî•ñ
+	* @brief åº§æ¨™æƒ…å ±å–å¾—é–¢æ•°
+	* @return DXVector3 åº§æ¨™æƒ…å ±
 	*/
 	DXVector3 GetPos()   { return m_Pos; }
 
 	/**
 	* @fn DXVector3 GetScale()
-	* @brief ƒXƒP[ƒ‹î•ñæ“¾ŠÖ”
-	* @return DXVector3 ƒXƒP[ƒ‹î•ñ
+	* @brief ã‚¹ã‚±ãƒ¼ãƒ«æƒ…å ±å–å¾—é–¢æ•°
+	* @return DXVector3 ã‚¹ã‚±ãƒ¼ãƒ«æƒ…å ±
 	*/
 	DXVector3 GetScale() { return m_Scale; }
 
 	/**
 	* @fn DXVector3 GetPos()
-	* @brief Šp“xî•ñæ“¾ŠÖ”
-	* @return DXVector3 Šp“x(“x”–@)
+	* @brief è§’åº¦æƒ…å ±å–å¾—é–¢æ•°
+	* @return DXVector3 è§’åº¦(åº¦æ•°æ³•)
 	*/
 	DXVector3 GetRot()   { return m_Rot;   }
 
 	/**
 	* @fn ObjModel* GetModel()
-	* @brief ƒ‚ƒfƒ‹ƒf[ƒ^æ“¾ŠÖ”
-	* @return ObjModel* ƒ‚ƒfƒ‹ƒf[ƒ^‚Ìƒ|ƒCƒ“ƒ^
+	* @brief ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿å–å¾—é–¢æ•°
+	* @return ObjModel* ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒã‚¤ãƒ³ã‚¿
 	*/
 	ObjModel* GetModel() { return m_ObjModel; }
 
 
 	/**
 	* @fn void SetPos(DXVector3 pos_)
-	* @brief À•Wî•ñƒZƒbƒgŠÖ”
-	* @param[in] pos_ À•W	  
+	* @brief åº§æ¨™æƒ…å ±ã‚»ãƒƒãƒˆé–¢æ•°
+	* @param[in] pos_ åº§æ¨™	  
 	*/
 	void SetPos(DXVector3 pos_)	 { m_Pos = pos_; }
 
 	/**
 	* @fn void SetScale(DXVector3 scale_)
-	* @brief ƒXƒP[ƒ‹î•ñƒZƒbƒgŠÖ”
-	* @param[in] scale_ ƒXƒP[ƒ‹
+	* @brief ã‚¹ã‚±ãƒ¼ãƒ«æƒ…å ±ã‚»ãƒƒãƒˆé–¢æ•°
+	* @param[in] scale_ ã‚¹ã‚±ãƒ¼ãƒ«
 	*/
 	void SetScale(DXVector3 scale_) { m_Scale = scale_; }
 
 	/**
 	* @fn void SetRot(DXVector3 rot_)
-	* @brief Šp“xî•ñƒZƒbƒgŠÖ”
-	* @param[in] rot_ Šp“x
+	* @brief è§’åº¦æƒ…å ±ã‚»ãƒƒãƒˆé–¢æ•°
+	* @param[in] rot_ è§’åº¦
 	*/
 	void SetRot(DXVector3 rot_)	 { m_Rot = rot_; }
 
 	/**
 	* @fn void SetModel(ObjModel* model_)
-	* @brief ƒ‚ƒfƒ‹î•ñƒZƒbƒgŠÖ”
-	* @param[in] model_ ƒ‚ƒfƒ‹ƒf[ƒ^
+	* @brief ãƒ¢ãƒ‡ãƒ«æƒ…å ±ã‚»ãƒƒãƒˆé–¢æ•°
+	* @param[in] model_ ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿
 	*/
 	void SetModel(ObjModel* model_) { m_ObjModel = model_; }
 
 private:
-	DXVector3 m_Pos;		//! À•W
-	DXVector3 m_Scale;		//! ƒXƒP[ƒ‹
-	DXVector3 m_Rot;		//! Šp“x
+	DXVector3 m_Pos;		//! åº§æ¨™
+	DXVector3 m_Scale;		//! ã‚¹ã‚±ãƒ¼ãƒ«
+	DXVector3 m_Rot;		//! è§’åº¦
 	
-	ObjModel* m_ObjModel;	//! ƒ‚ƒfƒ‹
+	ObjModel* m_ObjModel;	//! ãƒ¢ãƒ‡ãƒ«
 
-	bool m_Rotate;			//! ‰ñ“]‚³‚¹‚é‚©‚Ç‚¤‚©
+	bool m_Rotate;			//! å›è»¢ã•ã›ã‚‹ã‹ã©ã†ã‹
 };
 
 #endif

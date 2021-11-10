@@ -1,54 +1,54 @@
-#ifndef POST_PROCESS_MANAGERE_H_
+ï»¿#ifndef POST_PROCESS_MANAGERE_H_
 #define POST_PROCESS_MANAGERE_H_
 
 #include "../ViewModel/ViewModel.h"
 #include "PostEffectBase.h"
 
 /**
-* @brief ƒ|ƒXƒgƒvƒƒZƒX‚ÌŠÇ—‚ğs‚¤ƒNƒ‰ƒX
+* @brief ãƒã‚¹ãƒˆãƒ—ãƒ­ã‚»ã‚¹ã®ç®¡ç†ã‚’è¡Œã†ã‚¯ãƒ©ã‚¹
 */
 class PostProcessManager
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	PostProcessManager():
 		m_CurrentID(0)
 	{}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~PostProcessManager()
 	{}
 	
 	/**
 	* @fn void Entry(const char* displayName_, std::unique_ptr<PostEffectBase> postEffect_)
-	* @brief ƒ|ƒXƒgƒGƒtƒFƒNƒgƒIƒuƒWƒFƒNƒg‚Ì“o˜^ŠÖ”
-	* @param[in] displayName_ ƒfƒBƒXƒvƒŒƒC‚É•\¦‚³‚¹‚é–¼‘O
-	* @param[in] postEffect_ ƒ|ƒXƒgƒGƒtƒFƒNƒgƒIƒuƒWƒFƒNƒg
+	* @brief ãƒã‚¹ãƒˆã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç™»éŒ²é–¢æ•°
+	* @param[in] displayName_ ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ã«è¡¨ç¤ºã•ã›ã‚‹åå‰
+	* @param[in] postEffect_ ãƒã‚¹ãƒˆã‚¨ãƒ•ã‚§ã‚¯ãƒˆã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
 	void Entry(const char* displayName_, std::unique_ptr<PostEffectBase> postEffect_);
 
 	/**
 	* @fn void Render(const ViewModel& model_, const ViewModel* bgModel_)
-	* @brief •`‰æŠÖ”
-	* @param[in] model_ ƒrƒ…[—pƒ‚ƒfƒ‹
-	* @param[in] bgModel_ ”wŒi—pƒ‚ƒfƒ‹
+	* @brief æç”»é–¢æ•°
+	* @param[in] model_ ãƒ“ãƒ¥ãƒ¼ç”¨ãƒ¢ãƒ‡ãƒ«
+	* @param[in] bgModel_ èƒŒæ™¯ç”¨ãƒ¢ãƒ‡ãƒ«
 	*/
 	void Render(const ViewModel& model_, const ViewModel* bgModel_);
 	
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI();
 
 private:
-	std::vector<std::unique_ptr<PostEffectBase>> m_PostEffectList;		//! ƒ|ƒXƒgƒGƒtƒFƒNƒgƒŠƒXƒg
-	std::vector<const char*>					 m_PostEffectNameList;	//! ƒ|ƒXƒgƒGƒtƒFƒNƒg–¼ƒŠƒXƒg
-	int											 m_CurrentID;			//! Œ»İ‚ÌID
+	std::vector<std::unique_ptr<PostEffectBase>> m_PostEffectList;		//! ãƒã‚¹ãƒˆã‚¨ãƒ•ã‚§ã‚¯ãƒˆãƒªã‚¹ãƒˆ
+	std::vector<const char*>					 m_PostEffectNameList;	//! ãƒã‚¹ãƒˆã‚¨ãƒ•ã‚§ã‚¯ãƒˆåãƒªã‚¹ãƒˆ
+	int											 m_CurrentID;			//! ç¾åœ¨ã®ID
 };
 
 #endif

@@ -1,4 +1,4 @@
-#ifndef ViewModelManager_H_
+ï»¿#ifndef ViewModelManager_H_
 #define ViewModelManager_H_
 
 #include <vector>
@@ -6,13 +6,13 @@
 #include "ViewModel.h"
 
 /**
-* @brief ƒrƒ…[ƒ‚ƒfƒ‹‚ÌŠÇ—‚ğs‚¤ƒNƒ‰ƒX
+* @brief ãƒ“ãƒ¥ãƒ¼ãƒ¢ãƒ‡ãƒ«ã®ç®¡ç†ã‚’è¡Œã†ã‚¯ãƒ©ã‚¹
 */
 class ViewModelManager
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	ViewModelManager():
 		m_Model(nullptr),
@@ -22,51 +22,51 @@ public:
 	}
 	
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~ViewModelManager()
 	{}
 	
 	/**
 	* @fn void Update()
-	* @brief XVŠÖ”
+	* @brief æ›´æ–°é–¢æ•°
 	*/
 	void Update();
 
 	/**
 	* @fn void Render()
-	* @brief •`‰æŠÖ”
+	* @brief æç”»é–¢æ•°
 	*/
 	void Render();
 
 	/**
 	* @fn void Update()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI();
 
 	/**
 	* @fn bool CreateModel(const char* fileName, const char* displayName_)
-	* @brief ƒ‚ƒfƒ‹ì¬ŠÖ”
-	* @param[in] fileName	@ƒ‚ƒfƒ‹ƒf[ƒ^‚Ìƒtƒ@ƒCƒ‹–¼(Objƒtƒ@ƒCƒ‹, ƒpƒX•t‚«)
-	* @param[in] displayName_ ƒfƒBƒXƒvƒŒƒC‚É•\¦‚³‚¹‚é‚Ì–¼‘O
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
-	* @details ƒ‚ƒfƒ‹‚Ì“Ç‚İ‚İ‚Æƒrƒ…[ƒ‚ƒfƒ‹ì¬‚ğs‚¤
+	* @brief ãƒ¢ãƒ‡ãƒ«ä½œæˆé–¢æ•°
+	* @param[in] fileName	ã€€ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿ã®ãƒ•ã‚¡ã‚¤ãƒ«å(Objãƒ•ã‚¡ã‚¤ãƒ«, ãƒ‘ã‚¹ä»˜ã)
+	* @param[in] displayName_ ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ã«è¡¨ç¤ºã•ã›ã‚‹æ™‚ã®åå‰
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
+	* @details ãƒ¢ãƒ‡ãƒ«ã®èª­ã¿è¾¼ã¿ã¨ãƒ“ãƒ¥ãƒ¼ãƒ¢ãƒ‡ãƒ«ä½œæˆã‚’è¡Œã†
 	*/
 	bool CreateModel(const char* fileName, const char* displayName_);
 
 	/**
 	* @fn ViewModel* GetModel()
-	* @brief ‘I‘ğ‚³‚ê‚Ä‚¢‚éƒ‚ƒfƒ‹ƒf[ƒ^‚ğæ“¾‚·‚éŠÖ”
-	* @return ViewModel* ƒrƒ…[ƒ‚ƒfƒ‹‚Ìƒ|ƒCƒ“ƒ^
+	* @brief é¸æŠã•ã‚Œã¦ã„ã‚‹ãƒ¢ãƒ‡ãƒ«ãƒ‡ãƒ¼ã‚¿ã‚’å–å¾—ã™ã‚‹é–¢æ•°
+	* @return ViewModel* ãƒ“ãƒ¥ãƒ¼ãƒ¢ãƒ‡ãƒ«ã®ãƒã‚¤ãƒ³ã‚¿
 	*/
 	ViewModel* GetModel() { return m_Model.get(); }
 
 private:
-	std::unique_ptr<ViewModel>				m_Model;			//! ƒrƒ…[ƒ‚ƒfƒ‹
-	std::vector<std::unique_ptr<ObjModel>>  m_ObjModels;		//! 3Dƒ‚ƒfƒ‹—p
-	std::vector<const char*>		        m_ModelsNameList;	//! ƒ‚ƒfƒ‹‚ÌƒfƒBƒXƒvƒŒƒC–¼ƒŠƒXƒg
-	int m_CurrentModelID;										//! Œ»İ‘I‘ğ‚³‚ê‚Ä‚éƒ‚ƒfƒ‹‚ÌID
+	std::unique_ptr<ViewModel>				m_Model;			//! ãƒ“ãƒ¥ãƒ¼ãƒ¢ãƒ‡ãƒ«
+	std::vector<std::unique_ptr<ObjModel>>  m_ObjModels;		//! 3Dãƒ¢ãƒ‡ãƒ«ç”¨
+	std::vector<const char*>		        m_ModelsNameList;	//! ãƒ¢ãƒ‡ãƒ«ã®ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤åãƒªã‚¹ãƒˆ
+	int m_CurrentModelID;										//! ç¾åœ¨é¸æŠã•ã‚Œã¦ã‚‹ãƒ¢ãƒ‡ãƒ«ã®ID
 
 };
 

@@ -1,24 +1,24 @@
-#ifndef PHONG_H_
+ï»¿#ifndef PHONG_H_
 #define PHONG_H_
 
 #include "LightingBase.h"
 
 /**
-* @brief PhongShadingƒNƒ‰ƒX
+* @brief PhongShadingã‚¯ãƒ©ã‚¹
 */
 class Phong : public LightingBase
 {
 private:
 	/**
-	* @brief ƒtƒHƒ“ƒpƒ‰ƒ[ƒ^\‘¢‘Ì
+	* @brief ãƒ•ã‚©ãƒ³ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ§‹é€ ä½“
 	*/
 	struct PhongBuffer
 	{
-		float Shininess;	//! ƒnƒCƒ‰ƒCƒg‚Ì‹­‚³(’á‚¢‚Ù‚Ç‹­‚­Œõ‚é)
-		float Pad[3];		//! ƒTƒCƒY‚ğ16‚Ì”{”‚É‡‚í‚¹‚é‚½‚ß‚ÌƒpƒfƒBƒ“ƒO
+		float Shininess;	//! ãƒã‚¤ãƒ©ã‚¤ãƒˆã®å¼·ã•(ä½ã„ã»ã©å¼·ãå…‰ã‚‹)
+		float Pad[3];		//! ã‚µã‚¤ã‚ºã‚’16ã®å€æ•°ã«åˆã‚ã›ã‚‹ãŸã‚ã®ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°
 
 		/**
-		* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		*/
 		PhongBuffer():
 			Shininess(20.f),
@@ -28,7 +28,7 @@ private:
 
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	Phong() :
 		m_MinShiness(5.f),
@@ -38,36 +38,36 @@ public:
 	}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~Phong()
 	{}
 
 	/**
 	* @fn void SetUpShader()
-	* @brief ƒVƒF[ƒ_[ƒZƒbƒgŠÖ”
+	* @brief ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã‚»ãƒƒãƒˆé–¢æ•°
 	*/
 	void SetUpShader() const override;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI() override;
 
 private:
 	/**
 	* @fn bool CreateConstantBuffer()
-	* @brief ’è”ƒoƒbƒtƒ@ì¬ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief å®šæ•°ãƒãƒƒãƒ•ã‚¡ä½œæˆé–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool CreateConstantBuffer();
 
 private:
-	PhongBuffer			 m_PhongBuffer;		//! ƒtƒHƒ“—p\‘¢‘Ì•Ï”
-	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! ƒRƒ“ƒXƒgƒoƒbƒtƒ@
-	const float			 m_MinShiness;		//! ƒnƒCƒ‰ƒCƒg‚Ì‹­‚³‚ÌÅ¬’l
-	const float			 m_MaxShiness;		//! ƒnƒCƒ‰ƒCƒg‚Ì‹­‚³‚ÌÅ‘å’l
+	PhongBuffer			 m_PhongBuffer;		//! ãƒ•ã‚©ãƒ³ç”¨æ§‹é€ ä½“å¤‰æ•°
+	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! ã‚³ãƒ³ã‚¹ãƒˆãƒãƒƒãƒ•ã‚¡
+	const float			 m_MinShiness;		//! ãƒã‚¤ãƒ©ã‚¤ãƒˆã®å¼·ã•ã®æœ€å°å€¤
+	const float			 m_MaxShiness;		//! ãƒã‚¤ãƒ©ã‚¤ãƒˆã®å¼·ã•ã®æœ€å¤§å€¤
 };
 
 #endif

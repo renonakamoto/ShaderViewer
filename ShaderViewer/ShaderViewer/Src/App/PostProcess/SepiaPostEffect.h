@@ -1,25 +1,25 @@
-#ifndef SEPIA_POST_EFFECT_H_
+ï»¿#ifndef SEPIA_POST_EFFECT_H_
 #define SEPIA_POST_EFFECT_H_
 
 #include "PostEffectBase.h"
 #include "../Object/Sprite/Sprite.h"
 
 /**
-* @brief ƒZƒsƒAˆ—‚ğs‚¤ƒNƒ‰ƒX
+* @brief ã‚»ãƒ”ã‚¢å‡¦ç†ã‚’è¡Œã†ã‚¯ãƒ©ã‚¹
 */
 class SepiaPostEffect : public PostEffectBase
 {
 private:
 	/**
-	* @brief ƒZƒsƒAƒpƒ‰ƒ[ƒ^\‘¢‘Ì
+	* @brief ã‚»ãƒ”ã‚¢ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ§‹é€ ä½“
 	*/
 	struct SepiaBuffer
 	{
-		float SpiaRate;		//! ƒZƒsƒA—¦
-		float Pad[3];		//! ƒTƒCƒY‚ğ16‚Ì”{”‚É‡‚í‚¹‚é‚½‚ß‚ÌƒpƒfƒBƒ“ƒO
+		float SpiaRate;		//! ã‚»ãƒ”ã‚¢ç‡
+		float Pad[3];		//! ã‚µã‚¤ã‚ºã‚’16ã®å€æ•°ã«åˆã‚ã›ã‚‹ãŸã‚ã®ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°
 
 		/**
-		* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		*/
 		SepiaBuffer()
 		{
@@ -29,7 +29,7 @@ private:
 
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	SepiaPostEffect()
 	{
@@ -37,36 +37,36 @@ public:
 	}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~SepiaPostEffect()
 	{}
 
 	/**
 	* @fn void Render(const ViewModel& model_, const ViewModel* bgModel_)
-	* @brief •`‰æŠÖ”
-	* @param[in] model_ ƒrƒ…[—pƒ‚ƒfƒ‹
-	* @param[in] bgModel_ ”wŒi—pƒ‚ƒfƒ‹
+	* @brief æç”»é–¢æ•°
+	* @param[in] model_ ãƒ“ãƒ¥ãƒ¼ç”¨ãƒ¢ãƒ‡ãƒ«
+	* @param[in] bgModel_ èƒŒæ™¯ç”¨ãƒ¢ãƒ‡ãƒ«
 	*/
 	void Render(const ViewModel& model_, const ViewModel* bgModel_) override;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI() override;
 
 private:
 	/**
 	* @fn bool CreateConstantBuffer()
-	* @brief ’è”ƒoƒbƒtƒ@ì¬ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief å®šæ•°ãƒãƒƒãƒ•ã‚¡ä½œæˆé–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool CreateConstantBuffer();
 
 private:
-	SepiaBuffer			 m_SepiaBuffer;		//! ƒZƒsƒAƒpƒ‰ƒ[ƒ^’è”ƒoƒbƒtƒ@
-	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! ’è”ƒoƒbƒtƒ@
+	SepiaBuffer			 m_SepiaBuffer;		//! ã‚»ãƒ”ã‚¢ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿å®šæ•°ãƒãƒƒãƒ•ã‚¡
+	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! å®šæ•°ãƒãƒƒãƒ•ã‚¡
 };
 
 #endif

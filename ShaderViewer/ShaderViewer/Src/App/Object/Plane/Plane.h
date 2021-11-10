@@ -1,10 +1,10 @@
-#ifndef PLANE_H_
+ï»¿#ifndef PLANE_H_
 #define PLANE_H_
 
 #include "../../ViewModel/ViewModel.h"
 
 /**
-* @brief ƒvƒŒ[ƒ“ƒIƒuƒWƒFƒNƒgƒNƒ‰ƒX
+* @brief ãƒ—ãƒ¬ãƒ¼ãƒ³ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã‚¯ãƒ©ã‚¹
 */
 class Plane
 {

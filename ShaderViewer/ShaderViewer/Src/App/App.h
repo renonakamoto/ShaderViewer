@@ -1,4 +1,4 @@
-#ifndef APP_H_
+ï»¿#ifndef APP_H_
 #define APP_H_
 
 #include "Camera/Camera.h"
@@ -11,15 +11,15 @@
 #include "Object/Plane/Plane.h"
 
 /**
-* @brief ƒAƒvƒŠ‚Ì§ŒäƒNƒ‰ƒX
+* @brief ã‚¢ãƒ—ãƒªã®åˆ¶å¾¡ã‚¯ãƒ©ã‚¹
 */
 class App
 {
 public:
 	/**
 	* @fn static App* GetInstance()
-	* @brief ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚·ŠÖ”
-	* @return App* ƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^
+	* @brief ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¿”ã™é–¢æ•°
+	* @return App* ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿
 	*/
 	static App* GetInstance()
 	{
@@ -29,98 +29,98 @@ public:
 
 	/**
 	* @fn bool Init()
-	* @brief ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ì‰Šú‰»‚ğs‚¤ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®åˆæœŸåŒ–ã‚’è¡Œã†é–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool Init();
 
 	/**
 	* @fn void Run()
-	* @brief ÀsŠÖ”
-	* @details ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌXV‚Æ•`‰æ‚ğs‚¤
+	* @brief å®Ÿè¡Œé–¢æ•°
+	* @details ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®æ›´æ–°ã¨æç”»ã‚’è¡Œã†
 	*/
 	void Run();
 
 private:
 	/**
 	* @fn void Update()
-	* @brief ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚ÌXV‚ğs‚¤ŠÖ”
+	* @brief ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®æ›´æ–°ã‚’è¡Œã†é–¢æ•°
 	*/
 	void Update();
 
 	/**
 	* @fn void Render()
-	* @brief ƒAƒvƒŠƒP[ƒVƒ‡ƒ“‚Ì•`‰æ‚ğs‚¤ŠÖ”
+	* @brief ã‚¢ãƒ—ãƒªã‚±ãƒ¼ã‚·ãƒ§ãƒ³ã®æç”»ã‚’è¡Œã†é–¢æ•°
 	*/
 	void Render();
 
 	/**
 	* @fn void SetUpDepthShader()
-	* @brief ƒVƒƒƒhƒEƒ}ƒbƒv‚Ìİ’è‚ğs‚¤ŠÖ”
+	* @brief ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã®è¨­å®šã‚’è¡Œã†é–¢æ•°
 	*/
 	void SetUpDepthShader();
 
 	/**
 	* @fn void SetUpUnlitShader()
-	* @brief ƒAƒ“ƒŠƒbƒg•`‰æİ’è‚ğs‚¤ŠÖ”
+	* @brief ã‚¢ãƒ³ãƒªãƒƒãƒˆæç”»è¨­å®šã‚’è¡Œã†é–¢æ•°
 	*/
 	void SetUpUnlitShader();
 
 	/**
 	* @fn void DrawDepth()
-	* @brief ƒVƒƒƒhƒEƒ}ƒbƒv‚Ì•`‰æ‚ğs‚¤ŠÖ”
+	* @brief ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã®æç”»ã‚’è¡Œã†é–¢æ•°
 	*/
 	void DrawDepth();
 
 private:
 	/**
 	* @fn bool InitModels()
-	* @brief ƒ‚ƒfƒ‹‚Ì‰Šú‰»ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief ãƒ¢ãƒ‡ãƒ«ã®åˆæœŸåŒ–é–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool InitModels();
 
 	/**
 	* @fn bool InitShader()
-	* @brief ƒVƒF[ƒ_[‚Ì‰Šú‰»ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®åˆæœŸåŒ–é–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool InitShaders();
 
 	/**
 	* @fn bool InitLigtings()
-	* @brief ƒ‰ƒCƒeƒBƒ“ƒO‚Ì‰Šú‰»ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°ã®åˆæœŸåŒ–é–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool InitLigtings();
 
 	/**
 	* @fn bool InitPostProcess()
-	* @brief ƒ|ƒXƒgƒvƒƒZƒX‚Ì‰Šú‰»ŠÖ”
+	* @brief ãƒã‚¹ãƒˆãƒ—ãƒ­ã‚»ã‚¹ã®åˆæœŸåŒ–é–¢æ•°
 	*/
 	void InitPostProcess();
 
 private:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	App()
 	{}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~App()
 	{}
 
 private:
-	std::unique_ptr<Camera>	 m_Camera;				//! ƒJƒƒ‰
-	ViewModelManager		 m_ModelManager;		//! ƒ‚ƒfƒ‹ƒ}ƒl[ƒWƒƒ	
-	PostProcessManager		 m_PostProcessManager;	//! ƒ|ƒXƒgƒvƒƒZƒXƒ}ƒl[ƒWƒƒ
+	std::unique_ptr<Camera>	 m_Camera;				//! ã‚«ãƒ¡ãƒ©
+	ViewModelManager		 m_ModelManager;		//! ãƒ¢ãƒ‡ãƒ«ãƒãƒãƒ¼ã‚¸ãƒ£	
+	PostProcessManager		 m_PostProcessManager;	//! ãƒã‚¹ãƒˆãƒ—ãƒ­ã‚»ã‚¹ãƒãƒãƒ¼ã‚¸ãƒ£
 
-	// ”wŒiƒIƒuƒWƒFƒNƒg
-	SkyDome m_SkyDome;	//! ƒXƒJƒCƒh[ƒ€
-	Plane   m_Plane;	//! ƒvƒŒ[ƒ“
+	// èƒŒæ™¯ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
+	SkyDome m_SkyDome;	//! ã‚¹ã‚«ã‚¤ãƒ‰ãƒ¼ãƒ 
+	Plane   m_Plane;	//! ãƒ—ãƒ¬ãƒ¼ãƒ³
 };
 
 #define APP App::GetInstance()

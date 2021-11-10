@@ -147,9 +147,6 @@
     <ClCompile Include="Src\App\ViewModel\ViewModel.cpp">
       <Filter>Src\App\ViewModel</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Utility\Vector\DXVector.cpp">
-      <Filter>Src\App\Utility\Vector</Filter>
-    </ClCompile>
     <ClCompile Include="Src\App\Lighting\LightingManager.cpp">
       <Filter>Src\App\Lighting</Filter>
     </ClCompile>

@@ -1,23 +1,23 @@
-#ifndef CAMERA_H_
+ï»¿#ifndef CAMERA_H_
 #define CAMERA_H_
 
 #include "../../Utility/Vector/DXVector.h"
 
 /**
-* @brief ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚Ìí—Ş
+* @brief ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã®ç¨®é¡
 */
 class Camera
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	Camera() :
 		Camera({ 0.f, 2.f, -12.f }, { 0.f, 0.f, 0.f }, { 0.f, 1.f, 0.f })
 	{}
 
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	Camera(DXVector3 pos_, DXVector3 forcus_, DXVector3 up_) :
 		m_Pos(pos_),
@@ -26,21 +26,21 @@ public:
 	{}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~Camera() {}
 
 	/**
 	* @fn void Update()
-	* @brief XVŠÖ”
-	* @details Views—ñProjections—ñ‚Ìì¬‚ğs‚¢’è”ƒoƒbƒtƒ@‚Éİ’è‚·‚é
+	* @brief æ›´æ–°é–¢æ•°
+	* @details Viewè¡Œåˆ—Projectionè¡Œåˆ—ã®ä½œæˆã‚’è¡Œã„å®šæ•°ãƒãƒƒãƒ•ã‚¡ã«è¨­å®šã™ã‚‹
 	*/
 	void Update();
 
 private:
-	DXVector3 m_Pos;		//! À•W
-	DXVector3 m_FocusPos;	//! ’‹“_
-	DXVector3 m_Up;			//! ãŒü‚«ƒxƒNƒgƒ‹
+	DXVector3 m_Pos;		//! åº§æ¨™
+	DXVector3 m_FocusPos;	//! æ³¨è¦–ç‚¹
+	DXVector3 m_Up;			//! ä¸Šå‘ããƒ™ã‚¯ãƒˆãƒ«
 
 };
 

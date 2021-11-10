@@ -1,4 +1,4 @@
-#include "LightingManager.h"
+﻿#include "LightingManager.h"
 #include "../Config.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui_impl_dx11.h"

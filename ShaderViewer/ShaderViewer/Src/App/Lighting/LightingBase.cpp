@@ -1,4 +1,4 @@
-
+﻿
 #include <d3dcompiler.h>
 #include "LightingBase.h"
 #include "../../Engine/Engine.h"

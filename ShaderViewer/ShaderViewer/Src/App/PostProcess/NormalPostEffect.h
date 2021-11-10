@@ -1,4 +1,4 @@
-#ifndef NORMAL_POST_EFFECT_H_
+ï»¿#ifndef NORMAL_POST_EFFECT_H_
 #define NORMAL_POST_EFFECT_H_
 
 #include "PostEffectBase.h"
@@ -7,34 +7,34 @@
 #include "../../Engine/Shader/ShaderManager.h"
 
 /**
-* @brief ’Êí•`‰æˆ—‚ğs‚¤ƒNƒ‰ƒX
+* @brief é€šå¸¸æç”»å‡¦ç†ã‚’è¡Œã†ã‚¯ãƒ©ã‚¹
 */
 class NormalPostEffect : public PostEffectBase
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	NormalPostEffect()
 	{}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~NormalPostEffect()
 	{}
 
 	/**
 	* @fn void Render(const ViewModel& model_, const ViewModel* bgModel_)
-	* @brief •`‰æŠÖ”
-	* @param[in] model_ ƒrƒ…[—pƒ‚ƒfƒ‹
-	* @param[in] bgModel_ ”wŒi—pƒ‚ƒfƒ‹
+	* @brief æç”»é–¢æ•°
+	* @param[in] model_ ãƒ“ãƒ¥ãƒ¼ç”¨ãƒ¢ãƒ‡ãƒ«
+	* @param[in] bgModel_ èƒŒæ™¯ç”¨ãƒ¢ãƒ‡ãƒ«
 	*/
 	void Render(const ViewModel& model_, const ViewModel* bgModel_) override;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI() override;
 

@@ -1,4 +1,4 @@
-#include "NormalPostEffect.h"
+ï»¿#include "NormalPostEffect.h"
 #include "../Lighting/LightingManager.h"
 #include "../../Engine/Engine.h"
 
@@ -7,7 +7,7 @@ void NormalPostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_
 	GRAPHICS->SetRenderTarget(KindRT::RT_OFF_SCREEN);
 	LightingManager::GetInstance()->SetupShader();
 	
-	// ƒ‚ƒfƒ‹‚Ì•`‰æ
+	// ãƒ¢ãƒ‡ãƒ«ã®æç”»
 	model_.Render();
 
 	GRAPHICS->SetRenderTarget(KindRT::RT_ON_SCREEN);

@@ -1,4 +1,4 @@
-#ifndef LIGHTING_BASE_H_
+ï»¿#ifndef LIGHTING_BASE_H_
 #define LIGHTING_BASE_H_
 
 #include <memory>
@@ -9,13 +9,13 @@
 using namespace Microsoft::WRL;
 
 /**
-* @brief ƒ‰ƒCƒeƒBƒ“ƒOŠî’êƒNƒ‰ƒX
+* @brief ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°åŸºåº•ã‚¯ãƒ©ã‚¹
 */
 class LightingBase
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	LightingBase():
 		m_VertexShader(nullptr),
@@ -23,34 +23,34 @@ public:
 	{}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~LightingBase()
 	{}
 	
 	/**
 	* @fn bool Init(VertexShader* vertexShader_, PixelShader* pixelShader_)
-	* @brief ‰Šú‰»ŠÖ”
-	* @param[in] vertexShader_ ’¸“_ƒVƒF[ƒ_
-	* @param[in] pixelShader_ ƒsƒNƒZƒ‹ƒVƒF[ƒ_
+	* @brief åˆæœŸåŒ–é–¢æ•°
+	* @param[in] vertexShader_ é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€
+	* @param[in] pixelShader_ ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€
 	*/
 	bool Init(VertexShader* vertexShader_, PixelShader* pixelShader_);
 	
 	/**
 	* @fn void SetUpShader()
-	* @brief ƒVƒF[ƒ_[İ’èŠÖ”
+	* @brief ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼è¨­å®šé–¢æ•°
 	*/
 	virtual void SetUpShader() const = 0;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	virtual void DrawGUI() = 0;
 	
 protected:
-	VertexShader*			  m_VertexShader;	//! ’¸“_ƒVƒF[ƒ_[
-	PixelShader*			  m_PixelShader;	//! ƒsƒNƒZƒ‹ƒVƒF[ƒ_[
+	VertexShader*			  m_VertexShader;	//! é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
+	PixelShader*			  m_PixelShader;	//! ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
 
 };
 

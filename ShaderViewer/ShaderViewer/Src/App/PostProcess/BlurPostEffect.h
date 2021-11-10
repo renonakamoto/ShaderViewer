@@ -1,4 +1,4 @@
-#ifndef BLUR_POST_EFFECT_H_
+ï»¿#ifndef BLUR_POST_EFFECT_H_
 #define BLUR_POST_EFFECT_H_
 
 #include "PostEffectBase.h"
@@ -7,21 +7,21 @@
 #include "../../Engine/Shader/ShaderManager.h"
 
 /**
-* @brief ƒuƒ‰[ˆ—‚ğs‚¤ƒNƒ‰ƒX
+* @brief ãƒ–ãƒ©ãƒ¼å‡¦ç†ã‚’è¡Œã†ã‚¯ãƒ©ã‚¹
 */
 class BlurPostEffect : public PostEffectBase
 {
 private:
 	/**
-	* @brief ƒuƒ‰[ƒpƒ‰ƒ[ƒ^—p\‘¢‘Ì
+	* @brief ãƒ–ãƒ©ãƒ¼ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ç”¨æ§‹é€ ä½“
 	*/
 	struct BlurBuffer
 	{
-		float BlurStrength;	//! ƒuƒ‰[‚Ì‹­‚³
-		float Pad[3];		//! ƒTƒCƒY‚ğ16‚Ì”{”‚É‡‚í‚¹‚é‚½‚ß‚ÌƒpƒfƒBƒ“ƒO
+		float BlurStrength;	//! ãƒ–ãƒ©ãƒ¼ã®å¼·ã•
+		float Pad[3];		//! ã‚µã‚¤ã‚ºã‚’16ã®å€æ•°ã«åˆã‚ã›ã‚‹ãŸã‚ã®ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°
 
 		/**
-		* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+		* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 		*/
 		BlurBuffer()
 		{
@@ -31,7 +31,7 @@ private:
 
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	BlurPostEffect()
 	{
@@ -39,36 +39,36 @@ public:
 	}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~BlurPostEffect()
 	{}
 
 	/**
 	* @fn void Render(const ViewModel& model_, const ViewModel* bgModel_)
-	* @brief •`‰æŠÖ”
-	* @param[in] model_ ƒrƒ…[—pƒ‚ƒfƒ‹
-	* @param[in] bgModel_ ”wŒi—pƒ‚ƒfƒ‹
+	* @brief æç”»é–¢æ•°
+	* @param[in] model_ ãƒ“ãƒ¥ãƒ¼ç”¨ãƒ¢ãƒ‡ãƒ«
+	* @param[in] bgModel_ èƒŒæ™¯ç”¨ãƒ¢ãƒ‡ãƒ«
 	*/
 	void Render(const ViewModel& model_, const ViewModel* bgModel_) override;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI() override;
 
 private:
 	/**
 	* @fn bool CreateConstantBuffer()
-	* @brief ’è”ƒoƒbƒtƒ@ì¬ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief å®šæ•°ãƒãƒƒãƒ•ã‚¡ä½œæˆé–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool CreateConstantBuffer();
 
 private:
-	BlurBuffer			 m_BlurBuffer;		//! ƒuƒ‰[ƒpƒ‰ƒ[ƒ^‚Ì’è”ƒoƒbƒtƒ@
-	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! ’è”ƒoƒbƒtƒ@
+	BlurBuffer			 m_BlurBuffer;		//! ãƒ–ãƒ©ãƒ¼ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®å®šæ•°ãƒãƒƒãƒ•ã‚¡
+	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! å®šæ•°ãƒãƒƒãƒ•ã‚¡
 };
 
 #endif

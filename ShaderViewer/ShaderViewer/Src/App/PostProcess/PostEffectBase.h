@@ -1,4 +1,4 @@
-#ifndef PostEffectBase_H_
+ï»¿#ifndef PostEffectBase_H_
 #define PostEffectBase_H_
 
 #include "../ViewModel/ViewModel.h"
@@ -7,48 +7,48 @@
 
 
 /**
-* @brief ƒ|ƒXƒgƒGƒbƒtƒFƒNƒg‚ÌŠî’êƒNƒ‰ƒX
+* @brief ãƒã‚¹ãƒˆã‚¨ãƒƒãƒ•ã‚§ã‚¯ãƒˆã®åŸºåº•ã‚¯ãƒ©ã‚¹
 */
 class PostEffectBase
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	PostEffectBase()
 	{}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~PostEffectBase()
 	{}
 
 	/**
 	* @fn bool Init(VertexShader* vs_, PixelShader* ps_)
-	* @brief ‰Šú‰»ŠÖ”
-	* @param[in] vs_ ’¸“_ƒVƒF[ƒ_[
-	* @param[in] ps_ ƒsƒNƒZƒ‹ƒVƒF[ƒ_[
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief åˆæœŸåŒ–é–¢æ•°
+	* @param[in] vs_ é ‚ç‚¹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
+	* @param[in] ps_ ãƒ”ã‚¯ã‚»ãƒ«ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool Init(VertexShader* vs_, PixelShader* ps_);
 
 	/**
 	* @fn virtual void Render(const ViewModel& model_, const ViewModel* bgModel_) = 0
-	* @brief •`‰æŠÖ”
-	* @param[in] model_ ƒrƒ…[—pƒ‚ƒfƒ‹
-	* @param[in] bgModel_ ”wŒi—pƒ‚ƒfƒ‹
+	* @brief æç”»é–¢æ•°
+	* @param[in] model_ ãƒ“ãƒ¥ãƒ¼ç”¨ãƒ¢ãƒ‡ãƒ«
+	* @param[in] bgModel_ èƒŒæ™¯ç”¨ãƒ¢ãƒ‡ãƒ«
 	*/
 	virtual void Render(const ViewModel& model_, const ViewModel* bgModel_) = 0;
 	
 	/**
 	* @fn virtual void DrawGUI() = 0
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	virtual void DrawGUI() = 0;
 
 protected:
-	Sprite m_ScreenSprite;	//! ƒV[ƒ“ƒXƒvƒ‰ƒCƒg
+	Sprite m_ScreenSprite;	//! ã‚·ãƒ¼ãƒ³ã‚¹ãƒ—ãƒ©ã‚¤ãƒˆ
 
 };
 

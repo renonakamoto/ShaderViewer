@@ -1,20 +1,20 @@
-#include "SepiaPostEffect.h"
+ï»¿#include "SepiaPostEffect.h"
 #include "../Lighting/LightingManager.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui.h"
 
 void SepiaPostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_)
 {
-	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚ðƒIƒtƒXƒNƒŠ[ƒ“‚ÉÝ’è
+	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ã‚ªãƒ•ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã«è¨­å®š
 	GRAPHICS->SetRenderTarget(KindRT::RT_OFF_SCREEN);
 
-	// ƒVƒF[ƒ_[‚ÌÝ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®è¨­å®š
 	LightingManager::GetInstance()->SetupShader();
 
-	// ƒ‚ƒfƒ‹‚Ì•`‰æ
+	// ãƒ¢ãƒ‡ãƒ«ã®æç”»
 	model_.Render();
 
-	// ƒ|ƒXƒgƒGƒtƒFƒNƒg
+	// ãƒã‚¹ãƒˆã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
 	GRAPHICS->SetRenderTarget(KindRT::RT_ON_SCREEN);
 	GRAPHICS->GetContext()->UpdateSubresource(m_ConstantBuffer.Get(), 0U, nullptr, &m_SepiaBuffer, 0U, 0U);
 	GRAPHICS->GetContext()->PSSetConstantBuffers(0U, 1U, m_ConstantBuffer.GetAddressOf());

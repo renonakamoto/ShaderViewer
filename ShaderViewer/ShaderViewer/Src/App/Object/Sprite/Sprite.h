@@ -1,4 +1,4 @@
-#ifndef SPRITE_H_
+﻿#ifndef SPRITE_H_
 #define SPRITE_H_
 
 #include "../../../Engine/Graphics/GraphicsUtility.h"

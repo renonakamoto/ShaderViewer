@@ -1,4 +1,4 @@
-#ifndef NEGAPOSI_POST_EFFECT_H_
+ï»¿#ifndef NEGAPOSI_POST_EFFECT_H_
 #define NEGAPOSI_POST_EFFECT_H_
 
 #include "PostEffectBase.h"
@@ -7,21 +7,21 @@
 #include "../../Engine/Shader/ShaderManager.h"
 
 /**
-* @brief ƒlƒKƒ|ƒW”½“]ˆ—‚ğs‚¤ƒNƒ‰ƒX
+* @brief ãƒã‚¬ãƒã‚¸åè»¢å‡¦ç†ã‚’è¡Œã†ã‚¯ãƒ©ã‚¹
 */
 class NegaPosiPostEffect : public PostEffectBase
 {
 private:
 	/**
-	* @brief ƒlƒKƒ|ƒWƒpƒ‰ƒ[ƒ^\‘¢‘Ì
+	* @brief ãƒã‚¬ãƒã‚¸ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ§‹é€ ä½“
 	*/
 	struct NegaBuffer
 	{
-		float NegaRate;		//! ƒlƒKƒ|ƒW”½“]—¦
-		float Pad[3];		//! ƒTƒCƒY‚ğ16‚Ì”{”‚É‡‚í‚¹‚é‚½‚ß‚ÌƒpƒfƒBƒ“ƒO
+		float NegaRate;		//! ãƒã‚¬ãƒã‚¸åè»¢ç‡
+		float Pad[3];		//! ã‚µã‚¤ã‚ºã‚’16ã®å€æ•°ã«åˆã‚ã›ã‚‹ãŸã‚ã®ãƒ‘ãƒ‡ã‚£ãƒ³ã‚°
 
 		/**
-		* @brief ƒlƒKƒ|ƒWƒpƒ‰ƒ[ƒ^\‘¢‘Ì
+		* @brief ãƒã‚¬ãƒã‚¸ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿æ§‹é€ ä½“
 		*/
 		NegaBuffer()
 		{
@@ -31,7 +31,7 @@ private:
 
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	NegaPosiPostEffect()
 	{
@@ -39,36 +39,36 @@ public:
 	}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~NegaPosiPostEffect()
 	{}
 
 	/**
 	* @fn void Render(const ViewModel& model_, const ViewModel* bgModel_)
-	* @brief •`‰æŠÖ”
-	* @param[in] model_ ƒrƒ…[—pƒ‚ƒfƒ‹
-	* @param[in] bgModel_ ”wŒi—pƒ‚ƒfƒ‹
+	* @brief æç”»é–¢æ•°
+	* @param[in] model_ ãƒ“ãƒ¥ãƒ¼ç”¨ãƒ¢ãƒ‡ãƒ«
+	* @param[in] bgModel_ èƒŒæ™¯ç”¨ãƒ¢ãƒ‡ãƒ«
 	*/
 	void Render(const ViewModel& model_, const ViewModel* bgModel_) override;
 
 	/**
 	* @fn void DrawGUI()
-	* @brief GUI•`‰æŠÖ”
+	* @brief GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI() override;
 
 private:
 	/**
 	* @fn bool CreateConstantBuffer()
-	* @brief ’è”ƒoƒbƒtƒ@ì¬ŠÖ”
-	* @return bool ¬Œ÷‚µ‚½‚©‚Ç‚¤‚©
+	* @brief å®šæ•°ãƒãƒƒãƒ•ã‚¡ä½œæˆé–¢æ•°
+	* @return bool æˆåŠŸã—ãŸã‹ã©ã†ã‹
 	*/
 	bool CreateConstantBuffer();
 
 private:
-	NegaBuffer			 m_NegaBuffer;		//! ƒlƒKƒ|ƒW—p\‘¢‘Ì•Ï”
-	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! ƒRƒ“ƒXƒgƒoƒbƒtƒ@
+	NegaBuffer			 m_NegaBuffer;		//! ãƒã‚¬ãƒã‚¸ç”¨æ§‹é€ ä½“å¤‰æ•°
+	ComPtr<ID3D11Buffer> m_ConstantBuffer;	//! ã‚³ãƒ³ã‚¹ãƒˆãƒãƒƒãƒ•ã‚¡
 };
 
 #endif

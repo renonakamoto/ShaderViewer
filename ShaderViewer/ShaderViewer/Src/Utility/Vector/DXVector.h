@@ -1,4 +1,4 @@
-#ifndef DXVECTOR_H_
+﻿#ifndef DXVECTOR_H_
 #define DXVECTOR_H_
 
 #include <D3DX11.h>

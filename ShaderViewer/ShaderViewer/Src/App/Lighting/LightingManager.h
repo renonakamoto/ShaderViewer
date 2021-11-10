@@ -1,31 +1,31 @@
-#ifndef LIGHTNG_MANAGER_H_
+ï»¿#ifndef LIGHTNG_MANAGER_H_
 #define LIGHTNG_MANAGER_H_
 
 #include <vector>
 #include "LightingBase.h"
 
 /**
-* @brief LighingƒIƒuƒWƒFƒNƒgŠÇ—ƒNƒ‰ƒX
+* @brief Lighingã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆç®¡ç†ã‚¯ãƒ©ã‚¹
 */
 class LightingManager
 {
 public:
 	/**
-	* @brief ƒRƒ“ƒXƒgƒ‰ƒNƒ^
+	* @brief ã‚³ãƒ³ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	LightingManager() :
 		m_CurrentSelectShaderId(0)
 	{}
 
 	/**
-	* @brief ƒfƒXƒgƒ‰ƒNƒ^
+	* @brief ãƒ‡ã‚¹ãƒˆãƒ©ã‚¯ã‚¿
 	*/
 	~LightingManager() {}
 
 	/**
 	* @fn static LightingManager* GetInstance()
-	* @brief ƒCƒ“ƒXƒ^ƒ“ƒX‚ğ•Ô‚·ŠÖ”
-	* @return LightingManager* ƒCƒ“ƒXƒ^ƒ“ƒX‚Ìƒ|ƒCƒ“ƒ^
+	* @brief ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã‚’è¿”ã™é–¢æ•°
+	* @return LightingManager* ã‚¤ãƒ³ã‚¹ã‚¿ãƒ³ã‚¹ã®ãƒã‚¤ãƒ³ã‚¿
 	*/
 	static LightingManager* GetInstance()
 	{
@@ -35,28 +35,28 @@ public:
 
 	/**
 	* @fn void Entry(const char* displayName_, std::unique_ptr<LightingBase> lig_)
-	* @brief LightingƒIƒuƒWƒFƒNƒg‚Ì“o˜^ŠÖ”
-	* @param[in] displayName_ ƒfƒBƒXƒvƒŒƒC‚É•\¦‚³‚¹‚é–¼‘O
-	* @param[in] lig_ LightingƒIƒuƒWƒFƒNƒg
+	* @brief Lightingã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®ç™»éŒ²é–¢æ•°
+	* @param[in] displayName_ ãƒ‡ã‚£ã‚¹ãƒ—ãƒ¬ã‚¤ã«è¡¨ç¤ºã•ã›ã‚‹åå‰
+	* @param[in] lig_ Lightingã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆ
 	*/
 	void Entry(const char* displayName_, std::unique_ptr<LightingBase> lig_);
 
 	/**
 	* @fn void SetUpShader()
-	* @brief ‘I‘ğ‚³‚ê‚Ä‚¢‚éƒVƒF[ƒ_[‚ğƒZƒbƒg‚·‚éŠÖ”
+	* @brief é¸æŠã•ã‚Œã¦ã„ã‚‹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã‚’ã‚»ãƒƒãƒˆã™ã‚‹é–¢æ•°
 	*/
 	void SetupShader() const;
 	
 	/**
 	* @fn void DrawGUI()
-	* @brief ‘I‘ğ‚³‚ê‚Ä‚¢‚éƒVƒF[ƒ_[‚ÌGUI•`‰æŠÖ”
+	* @brief é¸æŠã•ã‚Œã¦ã„ã‚‹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®GUIæç”»é–¢æ•°
 	*/
 	void DrawGUI();
 
 private:
-	int m_CurrentSelectShaderId;								//! Œ»İ‘I‘ğ‚³‚ê‚Ä‚¢‚éƒVƒF[ƒ_[ID
-	std::vector<const char*>   m_LightingNamesList;				//! ƒ‰ƒCƒeƒBƒ“ƒO–¼ƒŠƒXƒg
-	std::vector<std::unique_ptr<LightingBase>> m_LightingList;	//! ƒ‰ƒCƒeƒBƒ“ƒOƒŠƒXƒg
+	int m_CurrentSelectShaderId;								//! ç¾åœ¨é¸æŠã•ã‚Œã¦ã„ã‚‹ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ID
+	std::vector<const char*>   m_LightingNamesList;				//! ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°åãƒªã‚¹ãƒˆ
+	std::vector<std::unique_ptr<LightingBase>> m_LightingList;	//! ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°ãƒªã‚¹ãƒˆ
 };
 
 

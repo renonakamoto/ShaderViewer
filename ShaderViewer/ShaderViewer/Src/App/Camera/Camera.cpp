@@ -1,14 +1,14 @@
-#include "Camera.h"
+ï»¿#include "Camera.h"
 #include "../../Engine/Engine.h"
 #include "../../App/Config.h"
 
 void Camera::Update()
 {
-	// ƒJƒƒ‰À•W‚Ìİ’è
+	// ã‚«ãƒ¡ãƒ©åº§æ¨™ã®è¨­å®š
 	ConstantBuffer* cb = GRAPHICS->GetConstantBufferData();
 	cb->CameraPos = DirectX::XMFLOAT4(m_Pos.x, m_Pos.y, m_Pos.z, 1.0f);
 
-	// Views—ñ‚Ìİ’è
+	// Viewè¡Œåˆ—ã®è¨­å®š
 	DirectX::XMVECTOR pos   = DirectX::XMVectorSet(m_Pos.x, m_Pos.y, m_Pos.z, 0.0f);
 	DirectX::XMVECTOR focus = DirectX::XMVectorSet(m_FocusPos.x, m_FocusPos.y, m_FocusPos.z, 0.0f);
 	DirectX::XMVECTOR up	= DirectX::XMVectorSet(m_Up.x, m_Up.y, m_Up.z, 0.0f);
@@ -16,7 +16,7 @@ void Camera::Update()
 	
 	DirectX::XMStoreFloat4x4(&cb->View, DirectX::XMMatrixTranspose(view_matrix));
 
-	// Projections—ñ‚Ìİ’è
+	// Projectionè¡Œåˆ—ã®è¨­å®š
 	float fov = DirectX::XMConvertToRadians(ConfigParameter::m_CameraFov);
 	float aspect = static_cast<float>(WINDOW->GetClientWidth()) / static_cast<float>(WINDOW->GetClientHeight());
 	float near_z = ConfigParameter::m_CameraNear;

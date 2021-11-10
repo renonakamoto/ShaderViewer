@@ -1,4 +1,4 @@
-#include "SkyDome.h"
+﻿#include "SkyDome.h"
 #include "../../../Utility/Vector/DXVector.h"
 
 SkyDome::SkyDome()

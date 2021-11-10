@@ -1,4 +1,4 @@
-#include "Config.h"
+ï»¿#include "Config.h"
 #include "../Utility/Utility.h"
 #include <cstdio>
 #include <sstream>
@@ -12,7 +12,7 @@ DXVector3 ConfigParameter::m_LightPos;
 
 void ConfigParameter::Load()
 {
-	// ƒtƒ@ƒCƒ‹‚ğŠJ‚­
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‹ã
 	FILE* fp;
 	fopen_s(&fp, "Assets/Config/InitData.txt", "r");
 
@@ -23,7 +23,7 @@ void ConfigParameter::Load()
 	
 	while (fgets(line_buf, line_buf_len, fp) != nullptr)
 	{
-		// [#]‚È‚ç–³‹
+		// [#]ãªã‚‰ç„¡è¦–
 		if (line_buf[0] == '#') continue;
 
 		Replace('\n', '\0', line_buf);
@@ -31,11 +31,11 @@ void ConfigParameter::Load()
 		std::vector<std::string> split_str = Split(line_buf, ' ');
 
 		if (split_str[0] == "") continue;
-		// ƒpƒ‰ƒ[ƒ^‚ÌˆÊ’u‚Ü‚Åƒ|ƒCƒ“ƒ^‚ğˆÚ“®
+		// ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã®ä½ç½®ã¾ã§ãƒã‚¤ãƒ³ã‚¿ã‚’ç§»å‹•
 		char* point = strchr(line_buf, '=')+2;
 
 
-		// Šeƒpƒ‰ƒ[ƒ^‚ğæ“¾‚µ‚Ä‚¢‚­
+		// å„ãƒ‘ãƒ©ãƒ¡ãƒ¼ã‚¿ã‚’å–å¾—ã—ã¦ã„ã
 		if (split_str[0] == "CameraFov")
 		{
 			m_CameraFov = static_cast<float>(atof(point));
@@ -66,6 +66,6 @@ void ConfigParameter::Load()
 	}
 
 
-	// ƒtƒ@ƒCƒ‹‚ğ•Â‚¶‚é
+	// ãƒ•ã‚¡ã‚¤ãƒ«ã‚’é–‰ã˜ã‚‹
 	fclose(fp);
 }

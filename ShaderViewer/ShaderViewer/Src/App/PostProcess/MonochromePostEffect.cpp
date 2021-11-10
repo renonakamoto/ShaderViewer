@@ -1,19 +1,19 @@
-#include "MonochromePostEffect.h"
+ï»¿#include "MonochromePostEffect.h"
 #include "../Lighting/LightingManager.h"
 #include "../../Engine/Engine.h"
 
 void MonochromePostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_)
 {
-	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚ðƒIƒtƒXƒNƒŠ[ƒ“‚ÉÝ’è
+	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ã‚ªãƒ•ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã«è¨­å®š
 	GRAPHICS->SetRenderTarget(KindRT::RT_OFF_SCREEN);
 
-	// ƒVƒF[ƒ_[‚ÌÝ’è
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®è¨­å®š
 	LightingManager::GetInstance()->SetupShader();
 
-	// ƒ‚ƒfƒ‹‚Ì•`‰æ
+	// ãƒ¢ãƒ‡ãƒ«ã®æç”»
 	model_.Render();
 
-	// ƒ|ƒXƒgƒGƒtƒFƒNƒg
+	// ãƒã‚¹ãƒˆã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
 	GRAPHICS->SetRenderTarget(KindRT::RT_ON_SCREEN);
 	m_ScreenSprite.Draw(DXVector3(0.0f, 0.0f, 0.0f));
 }

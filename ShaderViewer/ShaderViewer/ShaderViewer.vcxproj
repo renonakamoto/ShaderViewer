@@ -186,7 +186,6 @@
     <ClCompile Include="Src\Engine\Texture\TextureManager.cpp" />
     <ClCompile Include="Src\Engine\Window\Window.cpp" />
     <ClCompile Include="Src\Utility\Utility.cpp" />
-    <ClCompile Include="Src\Utility\Vector\DXVector.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imconfig.h" />

@@ -1,4 +1,4 @@
-#include "App.h"
+ï»¿#include "App.h"
 #include "Lighting/Phong.h"
 #include "Lighting/BlinnPhong.h"
 #include "Lighting/ToonShading.h"
@@ -15,19 +15,19 @@ bool App::Init()
 {
 	m_Camera = std::make_unique<Camera>();
 
-	// ƒ‚ƒfƒ‹‚Ì‰Šú‰»
+	// ãƒ¢ãƒ‡ãƒ«ã®åˆæœŸåŒ–
 	if (InitModels() == false) {
 		return false;
 	}
-	// ƒVƒF[ƒ_[‚Ì‰Šú‰»
+	// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã®åˆæœŸåŒ–
 	if (InitShaders() == false) {
 		return false;
 	}
-	// ƒ‰ƒCƒeƒBƒ“ƒOƒIƒuƒWƒFƒNƒg‚Ì‰Šú‰»
+	// ãƒ©ã‚¤ãƒ†ã‚£ãƒ³ã‚°ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åˆæœŸåŒ–
 	if (InitLigtings() == false) {
 		return false;
 	}
-	// ƒ|ƒXƒgƒvƒƒZƒXƒIƒuƒWƒFƒNƒg‚Ì‰Šú‰»
+	// ãƒã‚¹ãƒˆãƒ—ãƒ­ã‚»ã‚¹ã‚ªãƒ–ã‚¸ã‚§ã‚¯ãƒˆã®åˆæœŸåŒ–
 	InitPostProcess();
 
 	return true;
@@ -35,10 +35,10 @@ bool App::Init()
 
 void App::Run()
 {
-	// XV
+	// æ›´æ–°
 	Update();
 	
-	// •`‰æ
+	// æç”»
 	Render();
 }
 
@@ -50,20 +50,20 @@ void App::Update()
 
 void App::Render()
 {
-	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚ğƒNƒŠƒA
+	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ã‚¯ãƒªã‚¢
 	GRAPHICS->ClearRenderTarget();
 
-	// ƒV[ƒ“•`‰æ
+	// ã‚·ãƒ¼ãƒ³æç”»
 	{
-		// ƒVƒƒƒhƒEƒ}ƒbƒv‚É•`‰æ
+		// ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã«æç”»
 		DrawDepth();
 
-		// ”wŒiƒ‚ƒfƒ‹‚ğæ‚É•`‰æ
+		// èƒŒæ™¯ãƒ¢ãƒ‡ãƒ«ã‚’å…ˆã«æç”»
 		SetUpUnlitShader();
 		m_SkyDome.Render();
 		m_Plane.Render();
 
-		// ƒ‚ƒfƒ‹‚Ì•`‰æ
+		// ãƒ¢ãƒ‡ãƒ«ã®æç”»
 		std::vector<ViewModel*> models = {
 			m_ModelManager.GetModel(),
 			m_SkyDome.GetModel(),
@@ -72,30 +72,30 @@ void App::Render()
 		m_PostProcessManager.Render(*models[0], models[1]);
 	}
 
-	// GUI‚Ì•`‰æ
+	// GUIã®æç”»
 #if 1
 	{
-		// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚ğƒIƒ“ƒXƒNƒŠ[ƒ“‚Éİ’è
+		// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ã‚ªãƒ³ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã«è¨­å®š
 		GRAPHICS->SetRenderTarget(KindRT::RT_ON_SCREEN);
 
 		ImGui_ImplDX11_NewFrame();
 		ImGui_ImplWin32_NewFrame();
 		ImGui::NewFrame();
 
-		// ƒ‚ƒfƒ‹GUI
+		// ãƒ¢ãƒ‡ãƒ«GUI
 		m_ModelManager.DrawGUI();
 
-		// ƒVƒF[ƒ_[GUI
+		// ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼GUI
 		LightingManager::GetInstance()->DrawGUI();
 
-		// ƒ|ƒXƒgƒvƒƒZƒXGUI
+		// ãƒã‚¹ãƒˆãƒ—ãƒ­ã‚»ã‚¹GUI
 		m_PostProcessManager.DrawGUI();
 
 		ImGui::Render();
 		ImGui_ImplDX11_RenderDrawData(ImGui::GetDrawData());
 	}
 #endif
-	// •`‰æI—¹
+	// æç”»çµ‚äº†
 	GRAPHICS->FinishRendering();
 }
 
@@ -239,7 +239,7 @@ void App::InitPostProcess()
 
 void App::SetUpDepthShader()
 {
-	// ƒVƒƒƒhƒEƒ}ƒbƒv—p‚ÌƒVƒF[ƒ_[‚ğƒZƒbƒg‚·‚é
+	// ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ç”¨ã®ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 	ID3D11DeviceContext* context = GRAPHICS->GetContext();
 	context->IASetInputLayout(ShaderManager::GetInstance()->GetVertexShader("DepthVS")->GetInputLayout());
 	context->VSSetShader(ShaderManager::GetInstance()->GetVertexShader("DepthVS")->GetShaderInterface(), nullptr, 0U);
@@ -264,10 +264,10 @@ void App::SetUpUnlitShader()
 
 void App::DrawDepth()
 {
-	// ƒŒƒ“ƒ_[ƒ^[ƒQƒbƒg‚ğƒVƒƒƒhƒEƒ}ƒbƒv‚É‚·‚é
+	// ãƒ¬ãƒ³ãƒ€ãƒ¼ã‚¿ãƒ¼ã‚²ãƒƒãƒˆã‚’ã‚·ãƒ£ãƒ‰ã‚¦ãƒãƒƒãƒ—ã«ã™ã‚‹
 	GRAPHICS->SetRenderTarget(KindRT::RT_SHADOWMAP);
 	SetUpDepthShader();
 	
-	//  •`‰æ
+	//  æç”»
 	m_ModelManager.GetModel()->Render();
 }

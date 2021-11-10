@@ -1,20 +1,20 @@
-#include "OutlinePostEffect.h"
+ï»¿#include "OutlinePostEffect.h"
 #include "../Lighting/LightingManager.h"
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui.h"
 
 void OutlinePostEffect::Render(const ViewModel& model_, const ViewModel* bgModel_)
 {
-	// ƒ‚ƒfƒ‹‚ðƒIƒtƒXƒNƒŠ[ƒ“‚É•`‰æ
+	// ãƒ¢ãƒ‡ãƒ«ã‚’ã‚ªãƒ•ã‚¹ã‚¯ãƒªãƒ¼ãƒ³ã«æç”»
 	GRAPHICS->SetRenderTarget(KindRT::RT_OFF_SCREEN);
 	LightingManager::GetInstance()->SetupShader();
 
 	model_.Render();
 
-	// ƒVƒƒƒhƒEƒ}ƒbƒv‚É[“x’l‚ð•`‰æ
+	// ã‚·ãƒ£ãƒ‰ã‚¦ãƒžãƒƒãƒ—ã«æ·±åº¦å€¤ã‚’æç”»
 	GRAPHICS->ClearRenderTarget(KindRT::RT_SHADOWMAP);
 	GRAPHICS->SetRenderTarget(KindRT::RT_SHADOWMAP);
-	// ƒVƒƒƒhƒEƒ}ƒbƒv—p‚ÌƒVƒF[ƒ_[‚ðƒZƒbƒg‚·‚é
+	// ã‚·ãƒ£ãƒ‰ã‚¦ãƒžãƒƒãƒ—ç”¨ã®ã‚·ã‚§ãƒ¼ãƒ€ãƒ¼ã‚’ã‚»ãƒƒãƒˆã™ã‚‹
 	ID3D11DeviceContext* context = GRAPHICS->GetContext();
 	context->VSSetShader(ShaderManager::GetInstance()->GetVertexShader("CameraDepthVS")->GetShaderInterface(), nullptr, 0U);
 	context->PSSetShader(ShaderManager::GetInstance()->GetPixelShader("DepthPS")->GetShaderInterface(), nullptr, 0U);
@@ -28,7 +28,7 @@ void OutlinePostEffect::Render(const ViewModel& model_, const ViewModel* bgModel
 		}
 	}
 
-	// ƒ|ƒXƒgƒGƒtƒFƒNƒg
+	// ãƒã‚¹ãƒˆã‚¨ãƒ•ã‚§ã‚¯ãƒˆ
 	GRAPHICS->SetRenderTarget(KindRT::RT_ON_SCREEN);
 	ID3D11ShaderResourceView* depth_tex = GRAPHICS->GetRenderTarget(KindRT::RT_SHADOWMAP)->GetTexture();
 	GRAPHICS->GetContext()->PSSetShaderResources(1U, 1U, &depth_tex);

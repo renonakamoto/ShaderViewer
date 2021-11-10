@@ -1,4 +1,4 @@
-#include "ViewModel.h"
+﻿#include "ViewModel.h"
 #include "../Config.h"
 #include "../Lighting/LightingManager.h"
 #include "../../Engine/Engine.h"
