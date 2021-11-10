@@ -14,12 +14,6 @@ bool Engine::Init(int windowWidth_, int windowHeight_, const char* titleName_, H
 		return false;
 	}
 
-	// Inputの初期化
-	if (m_Input.Init(hInstance_, m_Window.GetWindowHandle()) == false)
-	{
-		return false;
-	}
-
 	// Soundの初期化
 	if (m_Sound.Init(m_Window.GetWindowHandle()) == false)
 	{
@@ -39,7 +33,6 @@ bool Engine::Init(int windowWidth_, int windowHeight_, const char* titleName_, H
 void Engine::Release()
 {
 	m_Graphics.Release();
-	m_Input.Release();
 	m_Sound.Release();
 	m_Texture.AllRelease();
 }

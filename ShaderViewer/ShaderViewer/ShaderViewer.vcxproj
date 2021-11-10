@@ -175,7 +175,6 @@
     <ClCompile Include="Src\Engine\Engine.cpp" />
     <ClCompile Include="Src\Engine\Graphics\DirectGraphics.cpp" />
     <ClCompile Include="Src\Engine\Graphics\RenderTarget.cpp" />
-    <ClCompile Include="Src\Engine\Input\InputManager.cpp" />
     <ClCompile Include="Src\Engine\Model\Model.cpp" />
     <ClCompile Include="Src\Engine\Model\ObjModel\ObjModel.cpp" />
     <ClCompile Include="Src\Engine\Shader\PixelShader.cpp" />
@@ -221,7 +220,6 @@
     <ClInclude Include="Src\Engine\Graphics\DirectGraphics.h" />
     <ClInclude Include="Src\Engine\Graphics\GraphicsUtility.h" />
     <ClInclude Include="Src\Engine\Graphics\RenderTarget.h" />
-    <ClInclude Include="Src\Engine\Input\InputManager.h" />
     <ClInclude Include="Src\Engine\Model\Model.h" />
     <ClInclude Include="Src\Engine\Model\ObjModel\ObjModel.h" />
     <ClInclude Include="Src\Engine\Shader\PixelShader.h" />

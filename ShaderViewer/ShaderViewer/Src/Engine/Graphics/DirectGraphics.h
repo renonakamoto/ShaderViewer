@@ -57,7 +57,7 @@ public:
 		m_VertexShader(nullptr),
 		m_PixelShader(nullptr),
 		m_SimpleVertexShader(nullptr),
-		m_FeatureLevel(D3D_FEATURE_LEVEL_9_1),
+		m_FeatureLevel{},
 		m_SamplerState(nullptr),
 		m_SampleDesc{ 0 },
 		m_RasterizerState{ nullptr },
@@ -113,12 +113,6 @@ public:
 	*/
 	void FinishRendering();
 	
-	/**
-	* @fn void UpdateLight()
-	* @brief ライトの更新関数
-	*/
-	void UpdateLight();
-
 public:
 	/**
 	* @fn ID3D11Device* GetDevice()

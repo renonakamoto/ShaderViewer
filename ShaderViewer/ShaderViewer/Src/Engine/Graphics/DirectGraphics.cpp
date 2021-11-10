@@ -117,29 +117,6 @@ void DirectGraphics::FinishRendering()
     m_SwapChain->Present(1U, 0U);
 }
 
-
-void DirectGraphics::UpdateLight()
-{
-    float width = 0.0f;
-
-    if (INPUT_MANAGER->GetKey(KeyInfo::Key_Down)) {
-        width++;
-    }
-    else if (INPUT_MANAGER->GetKey(KeyInfo::Key_Up)) {
-        width--;
-    }
-
-    if (width != 0.f)
-    {
-        DepthViewSize += width;
-
-        // プロジェクション行列設定
-        DirectX::XMMATRIX proj_mat = DirectX::XMMatrixOrthographicLH(DepthViewSize, DepthViewSize, -1, 1500.f);
-        // プロジェクション行列の作成
-        DirectX::XMStoreFloat4x4(&GRAPHICS->GetConstantBufferData()->LightProjection, DirectX::XMMatrixTranspose(proj_mat));
-    }
-}
-
 void DirectGraphics::SetRasterizerMode(RasterizerMode mode_)
 {
     m_Context->RSSetState(m_RasterizerState->GetAddressOf()[static_cast<int>(mode_)]);

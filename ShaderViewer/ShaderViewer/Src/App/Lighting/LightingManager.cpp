@@ -29,8 +29,8 @@ void LightingManager::DrawGUI()
 		return;
 	}
 
-	float window_width  = WINDOW->GetClientWidth();
-	float window_height = WINDOW->GetClientHeight();
+	float window_width  = static_cast<float>(WINDOW->GetClientWidth());
+	float window_height = static_cast<float>(WINDOW->GetClientHeight());
 	
 	ImGui::SetNextWindowPos(ImVec2(0.0f, window_height/3.0f), ImGuiCond_Always);
 	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, ConfigParameter::m_GuiHeight), ImGuiCond_Always);

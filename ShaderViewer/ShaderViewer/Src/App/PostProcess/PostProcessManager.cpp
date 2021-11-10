@@ -20,8 +20,8 @@ void PostProcessManager::Draw(const ViewModel& model_, const ViewModel* bgModel_
 
 void PostProcessManager::DrawGUI()
 {
-	float window_width  = WINDOW->GetClientWidth();
-	float window_height = WINDOW->GetClientHeight();
+	float window_width  = static_cast<float>(WINDOW->GetClientWidth());
+	float window_height = static_cast<float>(WINDOW->GetClientHeight());
 	
 	float height = window_height / 3.0f * 2.0f;
 

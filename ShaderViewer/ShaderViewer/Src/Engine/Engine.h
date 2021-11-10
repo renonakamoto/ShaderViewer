@@ -3,7 +3,6 @@
 
 #include "Window/Window.h"
 #include "Graphics/DirectGraphics.h"
-#include "Input/InputManager.h"
 #include "Sound/SoundManager.h"
 #include "Texture/TextureManager.h"
 
@@ -59,13 +58,6 @@ public:
 	DirectGraphics* GetGraphics() { return &m_Graphics; }
 
 	/**
-	* @fn InputManager* GetInput()
-	* @brief InputManagerの取得関数
-	* @return InputManager* InputManagerのポインタ
-	*/
-	InputManager* GetInput() { return &m_Input; }
-
-	/**
 	* @fn SoundManager* GetSound()
 	* @brief SoundManagerの取得関数
 	* @return SoundManager* SoundManagerのポインタ
@@ -97,7 +89,6 @@ private:
 private:
 	Window         m_Window;	//! ウィンドウクラス
 	DirectGraphics m_Graphics;	//! グラフィッククラス
-	InputManager   m_Input;		//! 入力管理クラス
 	SoundManager   m_Sound;		//! サウンド管理クラス
 	TextureManager m_Texture;	//! テクスチャ管理クラス
 };
@@ -105,7 +96,6 @@ private:
 // 簡易アクセス用
 #define WINDOW			(Engine::GetInstance()->GetWindow())
 #define GRAPHICS		(Engine::GetInstance()->GetGraphics())
-#define INPUT_MANAGER	(Engine::GetInstance()->GetInput())
 #define SOUND			(Engine::GetInstance()->GetSound())
 #define TEX_MANAGER		(Engine::GetInstance()->GetTexture())
 

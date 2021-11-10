@@ -13,9 +13,6 @@
     <Filter Include="Src\Engine\Graphics">
       <UniqueIdentifier>{c3221634-5a0c-4b1e-8ab4-fa1787f68020}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Src\Engine\Input">
-      <UniqueIdentifier>{b8589796-9009-4335-a5d3-eae34b108cfe}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Src\Engine\Model">
       <UniqueIdentifier>{0fb6b710-b9da-4c0f-b528-4cbc8d56ca81}</UniqueIdentifier>
     </Filter>
@@ -80,9 +77,6 @@
     </ClCompile>
     <ClCompile Include="Src\Engine\Graphics\DirectGraphics.cpp">
       <Filter>Src\Engine\Graphics</Filter>
-    </ClCompile>
-    <ClCompile Include="Src\Engine\Input\InputManager.cpp">
-      <Filter>Src\Engine\Input</Filter>
     </ClCompile>
     <ClCompile Include="Src\Engine\Model\Model.cpp">
       <Filter>Src\Engine\Model</Filter>
@@ -211,9 +205,6 @@
     </ClInclude>
     <ClInclude Include="Src\Engine\Graphics\DirectGraphics.h">
       <Filter>Src\Engine\Graphics</Filter>
-    </ClInclude>
-    <ClInclude Include="Src\Engine\Input\InputManager.h">
-      <Filter>Src\Engine\Input</Filter>
     </ClInclude>
     <ClInclude Include="Src\Engine\Model\Model.h">
       <Filter>Src\Engine\Model</Filter>

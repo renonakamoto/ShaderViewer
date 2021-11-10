@@ -33,10 +33,10 @@ bool InitGui();
 	エントリーポイント
 */
 int APIENTRY WinMain(
-	_In_	  HINSTANCE hInstance,
-	_In_opt_  HINSTANCE hPrevInstance,
-	_In_	  LPSTR     lpCmpLine,
-	_In_	  INT       nCmdShow)
+	_In_	  HINSTANCE hInstance_,
+	_In_opt_  HINSTANCE hPrevInstance_,
+	_In_	  LPSTR     lpCmpLine_,
+	_In_	  INT       nCmdShow_)
 {
 #ifdef _DEBUG
 	// メモリリークチェック
@@ -47,7 +47,7 @@ int APIENTRY WinMain(
 	ConfigParameter::Load();
 
 	//　Engineの初期化
-	if (Engine::GetInstance()->Init(1280, 720, "ShaderViewer", hInstance) == false)
+	if (Engine::GetInstance()->Init(1280, 720, "ShaderViewer", hInstance_) == false)
 	{
 		return -1;
 	}

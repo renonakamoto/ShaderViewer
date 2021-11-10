@@ -25,7 +25,7 @@ void ViewModel::Draw() const
 
 void ViewModel::DrawGUI()
 {
-	float window_width  = WINDOW->GetClientWidth();
+	float window_width = static_cast<float>(WINDOW->GetClientWidth());
 
 	ImGui::SetNextWindowPos(ImVec2(window_width - ConfigParameter::m_GuiWidth, 0.0f), ImGuiCond_Always);
 	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, ConfigParameter::m_GuiHeight), ImGuiCond_Always);
