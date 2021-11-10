@@ -31,9 +31,9 @@ void ViewModel::DrawGUI()
 	ImGui::SetNextWindowSize(ImVec2(ConfigParameter::m_GuiWidth, ConfigParameter::m_GuiHeight), ImGuiCond_Always);
 	ImGui::Begin("TransForm");
 	ImGui::Separator();
-	ImGui::DragFloat3("Pos", m_Pos.GetData(), 0.01f);
-	ImGui::DragFloat3("Sca", m_Scale.GetData(), 0.01f);
-	ImGui::DragFloat3("Rot", m_Rot.GetData(),0.5f);
+	ImGui::DragFloat3("Pos", &m_Pos.x, 0.01f);
+	ImGui::DragFloat3("Sca", &m_Scale.x, 0.01f);
+	ImGui::DragFloat3("Rot", &m_Rot.x,0.5f);
 	ImGui::Checkbox("Rotate", &m_Rotate);
 	ImGui::End();
 }
