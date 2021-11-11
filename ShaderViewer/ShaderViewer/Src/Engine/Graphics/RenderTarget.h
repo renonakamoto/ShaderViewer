@@ -23,7 +23,7 @@ public:
 
 	/**
 	* @fn bool Create(int width_, int height_, DXGI_FORMAT rtFormat_, DXGI_FORMAT dsFormat_, float clearColor_[4])
-	* @brief レンダーターバッファの作成を行う関数
+	* @brief レンダーターターゲットの作成を行う関数
 	* @param[in] width_ 横幅
 	* @param[in] height_ 縦幅
 	* @param[in] rtFormat_ レンダーバッファフォーマット
@@ -31,11 +31,11 @@ public:
 	* @param[in] clearColor_ クリアカラー
 	* @return bool 成功したかどうかを真偽で返す
 	*/
-	bool Create(int width_, int height_, DXGI_FORMAT rtFormat_, DXGI_FORMAT dsFormat_, float clearColor_[4]);
+	bool Create(UINT width_, UINT height_, DXGI_FORMAT rtFormat_, DXGI_FORMAT dsFormat_, float clearColor_[4]);
 	
 	/**
 	* @fn bool Create(int width_, int height_, ID3D11Texture2D* resouce_, DXGI_FORMAT dsFormat_, float clearColor_[4])
-	* @brief レンダーターバッファの作成を行う関数
+	* @brief レンダーターターゲットの作成を行う関数
 	* @param[in] width_ 横幅
 	* @param[in] height_ 縦幅
 	* @param[in] resouce_ レンダーバッファテクスチャ
@@ -43,7 +43,7 @@ public:
 	* @param[in] clearColor_ クリアカラー
 	* @return bool 成功したかどうかを真偽で返す
 	*/
-	bool Create(int width_, int height_, ID3D11Texture2D* resouce_, DXGI_FORMAT dsFormat_, float clearColor_[4]);
+	bool Create(UINT width_, UINT height_, ID3D11Texture2D* resouce_, DXGI_FORMAT dsFormat_, float clearColor_[4]);
 
 	/**
 	* @fn int GetWidth()
@@ -88,8 +88,19 @@ public:
 	ID3D11ShaderResourceView* GetTexture() { return m_Texture.Get(); }
 
 private:
-	int   m_Width;			//! 横幅
-	int   m_Height;			//! 縦幅
+	/**
+	* @fn bool Create(DXGI_FORMAT dsFormat_, float clearColor_[4])
+	* @brief レンダーターゲットとデプスステンシルバッファの作成関数
+	* @param[in] dsFormat_ デプスステンシルバッファのフォーマット
+	* @param[in] clearColor_ クリアカラー
+	* @return bool 成功したかどうかを真偽で返す
+	* @details 事前にRT用バッファ(m_RTTexture)を作成しておく必要がある
+	*/
+	bool CreateRTVandDSV(DXGI_FORMAT dsFormat_, float clearColor_[4]);
+
+private:
+	UINT  m_Width;			//! 横幅
+	UINT  m_Height;			//! 縦幅
 	float m_ClearColor[4];	//! クリアカラー
 
 	ComPtr<ID3D11RenderTargetView>   m_RenderTargetView; //! レンダーターゲットビュー
