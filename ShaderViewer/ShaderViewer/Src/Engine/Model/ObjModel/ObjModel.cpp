@@ -47,73 +47,71 @@ bool ObjModel::Load(const char* fileName_)
         // もしスペースがなければ無視する
         if (parse_point == nullptr) continue;
 
-
         Replace('\n', '\0', line_buffer);
-
 
         /*
             v  : 頂点座標データ
             vn : 法線データ
             f  : 面データ
         */
-
         // 先頭を調べ「v」なら頂点情報なので解析を行う
         if (line_buffer[0] == 'v')
         {
 
             // 二文字目にアクセスして頂点のデータの種類を調べる
             // 頂点座標
-            if (line_buffer[1] == ' ') {
+            if (line_buffer[1] == ' ')
+            {
                 for (int i = 1; i < strlen(parse_point); ++i) {
-                    if (parse_point[i] == ' ') {
+                    if (parse_point[i] == ' ') 
+                    {
                         parse_point = &parse_point[i];
                     }
-                    else {
+                    else 
+                    {
                         break;
                     }
                 }
                 ParseVertex(vertices, &parse_point[1]);
             }
             // テクスチャ座標
-            else if (line_buffer[1] == 't') {
+            else if (line_buffer[1] == 't') 
+            {
                 ParseVertex(textures, &parse_point[1]);
                 // V軸を反転させる
-                textures[textures.size() - 1].y = (1.0f - textures[textures.size() - 1].y);
+                textures[textures.size() - 1].y = 1.0f - textures[textures.size() - 1].y;
             }
             // 法線ベクトル
-            else if (line_buffer[1] == 'n') {
-
+            else if (line_buffer[1] == 'n') 
+            {
                 ParseVertex(normals, &parse_point[1]);
             }
         }
         // もし「f」なら面情報なので解析を行いインデックスバッファに詰め込む
         else if (line_buffer[0] == 'f')
         {
-            Replace('\n', '\0', line_buffer);
             ParseFKeywordTag(meshes[current_mat_name], vertices, textures, normals, &parse_point[1]);
         }
         // もし「mtllib」ならマテリアル名なので保存する
         else if (strstr(line_buffer, "mtllib") == line_buffer)
         {
-            Replace('\n', '\0', line_buffer);
             materials.push_back(&line_buffer[strlen("mtllib") + 1]);
         }
         // もし「usemtl」なら所属する属性が変わるので変更する
         else if (strstr(line_buffer, "usemtl") == line_buffer)
         {
-            Replace('\n', '\0', line_buffer);
             current_mat_name = &line_buffer[strlen("usemtl") + 1];
             meshes[current_mat_name].MaterialName = current_mat_name;
         }
     }
 
+    // ファイルを閉じる
+    fclose(fp);
+
     for (auto& mesh : meshes)
     {
         m_MeshList.push_back(mesh.second);            
     }
-
-    // ファイルを閉じる
-    fclose(fp);
 
     // マテリアルファイルが保存されているフォルダまでのパスを保存
     char   flie_path[256];
@@ -133,21 +131,20 @@ bool ObjModel::Load(const char* fileName_)
     ID3D11Device* device = GRAPHICS->GetDevice();
 
     // マテリアルの読みこみ
-    if (LoadMaterialFile(materials, flie_path, device) == false) {
+    if (LoadMaterialFile(materials, flie_path, device) == false)
+    {
         return false;
     }
     // 頂点バッファの作成
-    if (CreateVertexBuffer(device) == false) {
+    if (CreateVertexBuffer(device) == false) 
+    {
         return false;
     }
     // インデックスバッファの作成
-    if (CreateIndexBuffer(device) == false) {
+    if (CreateIndexBuffer(device) == false) 
+    {
         return false;
     }
-    // 入力レイアウトの作成
-    //if (CreateInputLayout(device, GRAPHICS->GetSimpleVertexShader()) == false) {
-    //    return false;
-    //}
     
     // 読み込み成功
     return true;
