@@ -78,9 +78,6 @@
     <ClCompile Include="Src\Engine\Graphics\DirectGraphics.cpp">
       <Filter>Src\Engine\Graphics</Filter>
     </ClCompile>
-    <ClCompile Include="Src\Engine\Model\Model.cpp">
-      <Filter>Src\Engine\Model</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Engine\Model\ObjModel\ObjModel.cpp">
       <Filter>Src\Engine\Model\ObjModel</Filter>
     </ClCompile>

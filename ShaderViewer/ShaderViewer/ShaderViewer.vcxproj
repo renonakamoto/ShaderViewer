@@ -179,7 +179,6 @@
     <ClCompile Include="Src\Engine\Engine.cpp" />
     <ClCompile Include="Src\Engine\Graphics\DirectGraphics.cpp" />
     <ClCompile Include="Src\Engine\Graphics\RenderTarget.cpp" />
-    <ClCompile Include="Src\Engine\Model\Model.cpp" />
     <ClCompile Include="Src\Engine\Model\ObjModel\ObjModel.cpp" />
     <ClCompile Include="Src\Engine\Shader\PixelShader.cpp" />
     <ClCompile Include="Src\Engine\Shader\ShaderBase.cpp" />
