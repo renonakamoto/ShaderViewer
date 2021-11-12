@@ -28,7 +28,9 @@ public:
 	/**
 	* @biref デストラクタ
 	*/
-	~SoundManager() { }
+	~SoundManager() { 
+		Release();
+	}
 
 	/**
 	* @brief サウンド初期化関数
@@ -47,24 +49,25 @@ public:
 	* @brief waveデータの読み込み関数
 	* 指定したパスのwaveデータをセカンダリ・バッファに読み込みます。重複して再生する必要のない音源にのみ使用してください。
 	* @return 成功した場合はtrue、そうでないならfalse
-	* @param[in] file_name 読み込むパスを含むファイル名
-	* @param[in] key_name 読み込むデータを管理するキー
+	* @param[in] fileName_ 読み込むパスを含むファイル名
+	* @param[in] keyName_ 読み込むデータを管理するキー
 	*/
-	bool LoadBGMData(std::string filename_, std::string keyname_);
+	bool LoadBGMData(std::string fileName_, std::string keyName_);
 
 	/**
 	* @brief waveデータの読み込み関数
 	* 指定したパスのwaveデータをセカンダリ・バッファに読み込みます。重複して再生する必要のある音源にのみ使用してください。
 	* @return 成功した場合はtrue、そうでないならfalse
-	* @param[in] file_name 読み込むパスを含むファイル名
-	* @param[in] key_name 読み込むデータを管理するキー
+	* @param[in] fileName_ 読み込むパスを含むファイル名
+	* @param[in] keyName_ 読み込むデータを管理するキー
 	*/
-	bool LoadSEData(std::string filename_, std::string keynama_);
+	bool LoadSEData(std::string fileName_, std::string keyName_);
 
 	/**
 	* @brief サウンド再生関数
 	* 指定したSEData内のサウンドを再生します
 	* @param[in] key_ 再生したいサウンドのキー
+	* @param[in] isLoop_ ループさせるかどうaか
 	*/
 	void PlaySE(std::string key_, bool isLoop_ = false);
 
@@ -81,7 +84,7 @@ public:
 	* @param[in] key_ 停止したいサウンドのキー
 	*/
 	void StopBGM(std::string key_);
-private:
+
 	/**
 	* @biref キーチェック関数
 	* 引数のキーが既に登録されているか確認する関数です
@@ -97,6 +100,23 @@ private:
 	* @param[in] key_ 確認するキー
 	*/
 	bool HasKeySE(std::string key_);
+private:
+	/**
+	* @brief サウンドデータ読み込み関数関数
+	* @return 成功した場合はtrue、そうでないならfalse
+	* @param[in] fileName_ 読み込むパスを含むファイル名
+	* @param[out] outData_ 読み込んだデータを保存する変数
+	*/
+	bool LoadData(std::string fileName_, LPDIRECTSOUNDBUFFER8& outData_);
+
+	/**
+	* @biref キーチェック関数
+	* 引数のキーが既に登録されているか確認する関数です
+	* @return 登録済みの場合はtrue、未登録はfalse
+	* @param[in] key_ 確認するキー
+	*/
+	template <class T>
+	bool HasKey(std::string key_, std::unordered_map<std::string, T>& soundsData_);
 
 private:
 	LPDIRECTSOUND8 m_Interface;
@@ -105,3 +125,11 @@ private:
 };
 
 #endif // !SOUNDMANAGER_H_
+
+template<class T>
+inline bool SoundManager::HasKey(std::string key_, std::unordered_map<std::string, T>& soundsData_)
+{
+	auto it = soundsData_.find(key_);
+
+	return (it != soundsData_.end());
+}
