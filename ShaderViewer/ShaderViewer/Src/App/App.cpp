@@ -115,65 +115,41 @@ bool App::InitModels()
 
 bool App::InitShaders()
 {
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/SimpleVS.cso", "VS", KindShader::VS) == false)
+	// シェーダー作成に必要なパラメーター
+	struct LoadParam
 	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/PhongPS.cso", "PS", KindShader::PS) == false)
+		std::string FileName;	// ファイル名(パス無し, Assets/Shader/に入れておく必要がある)
+		std::string KeyWord;	// キーワード
+		KindShader  Kind;		// シェーダーの種類
+	};
+	
+	// 読み込みリスト
+	LoadParam params[]{
+		{"SimpleVS.cso",				"VS",			 KindShader::VS},
+		{"PhongPS.cso" ,				"PS",			 KindShader::PS},
+		{"BlinnPhonePS.cso",			"BPS",			 KindShader::PS},
+		{"2DVertexShader.cso",			"2DVS",			 KindShader::VS},
+		{"BlurPixelShader.cso",			"BlurPS",		 KindShader::PS},
+		{"DepthVertexShader.cso",		"DepthVS",		 KindShader::VS},
+		{"DepthPixelShader.cso",		"DepthPS",		 KindShader::PS},
+		{"MonochromePixelShader.cso",	"MonochromePS",  KindShader::PS},
+		{"NegaPosiPixelShader.cso",		"NegaPosiPS",	 KindShader::PS},
+		{"SepiaPixelShader.cso",		"SepiaPS",		 KindShader::PS},
+		{"CameraDepthVertexShader.cso",	"CameraDepthVS", KindShader::VS},
+		{"OutlinePixelShader.cso",		"OurlinePS",	 KindShader::PS},
+		{"UnlitPixelShader.cso",		"UnlitPS",		 KindShader::PS},
+		{"2DPixelShader.cso",			"2DPS",			 KindShader::PS},
+		{"ToonPixelShader.cso",			"ToonPS",		 KindShader::PS},
+	};
+
+	// 読み込み
+	std::string path = "Assets/Shader/";
+	for (auto& param : params)
 	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/BlinnPhonePS.cso", "BPS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/2DVertexShader.cso", "2DVS", KindShader::VS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/BlurPixelShader.cso", "BlurPS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/DepthVertexShader.cso", "DepthVS", KindShader::VS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/DepthPixelShader.cso", "DepthPS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/MonochromePixelShader.cso", "MonochromePS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/NegaPosiPixelShader.cso", "NegaPosiPS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/SepiaPixelShader.cso", "SepiaPS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/CameraDepthVertexShader.cso", "CameraDepthVS", KindShader::VS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/OutlinePixelShader.cso", "OurlinePS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/UnlitPixelShader.cso", "UnlitPS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/2DPixelShader.cso", "2DPS", KindShader::PS) == false)
-	{
-		return false;
-	}
-	if (ShaderManager::GetInstance()->Load("Assets/Shader/ToonPixelShader.cso", "ToonPS", KindShader::PS) == false)
-	{
-		return false;
+		if (ShaderManager::GetInstance()->Load((path + param.FileName).c_str(), param.KeyWord, param.Kind) == false)
+		{
+			return false;
+		}
 	}
 
 	return true;
