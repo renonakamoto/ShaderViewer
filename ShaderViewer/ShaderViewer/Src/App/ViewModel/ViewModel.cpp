@@ -7,7 +7,7 @@
 
 void ViewModel::Update()
 {
-	if (m_Rotate)
+	if (m_IsRotate)
 	{
 		m_Rot.y += 0.5f;
 	}
@@ -34,6 +34,6 @@ void ViewModel::DrawGUI()
 	ImGui::DragFloat3("Pos", &m_Pos.x, 0.01f);
 	ImGui::DragFloat3("Sca", &m_Scale.x, 0.01f);
 	ImGui::DragFloat3("Rot", &m_Rot.x,0.5f);
-	ImGui::Checkbox("Rotate", &m_Rotate);
+	ImGui::Checkbox("Rotate", &m_IsRotate);
 	ImGui::End();
 }

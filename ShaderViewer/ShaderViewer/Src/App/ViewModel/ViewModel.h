@@ -29,7 +29,7 @@ public:
 		m_Scale(scale_),
 		m_Rot(rot_),
 		m_ObjModel(model_),
-		m_Rotate(false)
+		m_IsRotate(false)
 	{}
 
 	/**
@@ -122,7 +122,7 @@ private:
 	
 	ObjModel* m_ObjModel;	//! モデル
 
-	bool m_Rotate;			//! 回転させるかどうか
+	bool m_IsRotate;		//! 回転させるかどうか
 };
 
 #endif
