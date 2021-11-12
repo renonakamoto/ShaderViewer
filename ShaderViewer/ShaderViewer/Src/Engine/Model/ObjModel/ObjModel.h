@@ -77,45 +77,40 @@ private:
 	* @brief モデル読み込み関数
 	* @param[in] fileList_ マテリアルリスト
 	* @param[in] filePath_ マテリアルが保存されているフォルダのパス
-	* @param[in] device_ デバイス
 	* @return bool 成功したかどうかを真偽で返す
 	*/
-	bool LoadMaterialFile(std::vector<std::string> fileList_, std::string filePath_, ID3D11Device* device_);
+	bool LoadMaterialFile(std::vector<std::string> fileList_, std::string filePath_);
 
 	/**
 	* @fn bool LoadTexture(std::string keyWord_, std::string fileName_, ID3D11Device* device_)
 	* @brief テクスチャ読み込み関数
 	* @param[in] keyWord_ テクスチャに紐づける
 	* @param[in] fileName_ ファイルパス
-	* @param[in] device_ デバイス
 	* @return bool 成功したかどうかを真偽で返す
 	*/
-	bool LoadTexture(std::string keyWord_, std::string fileName_, ID3D11Device* device_);
+	bool LoadTexture(std::string keyWord_, std::string fileName_);
 
 	/**
-	* @fn bool CreateVertexBuffer(ID3D11Device* device_)
+	* @fn bool CreateVertexBuffer()
 	* @brief 頂点バッファ作成関数
-	* @param[in] device_ デバイス
 	* @return bool 成功したかどうかを真偽で返す
 	*/
-	bool CreateVertexBuffer(ID3D11Device* device_);
+	bool CreateVertexBuffer();
 	
 	/**
-	* @fn bool CreateIndexBuffer(ID3D11Device* device_)
+	* @fn bool CreateIndexBuffer()
 	* @brief インデックスバッファ作成関数
-	* @param[in] device_ デバイス
 	* @return bool 成功したかどうかを真偽で返す
 	*/
-	bool CreateIndexBuffer(ID3D11Device* device_);
+	bool CreateIndexBuffer();
 	
 	/**
-	* @fn bool CreateInputLayout(ID3D11Device* device_, VertexShader* vertexShader_)
+	* @fn bool CreateInputLayout(VertexShader* vertexShader_)
 	* @brief 入力レイアウト作成関数
-	* @param[in] device_ デバイス
 	* @param[in] vertexShader_ バーテックスシェーダー
 	* @return bool 成功したかどうかを真偽で返す
 	*/
-	bool CreateInputLayout(ID3D11Device* device_, VertexShader* vertexShader_);
+	bool CreateInputLayout(VertexShader* vertexShader_);
 
 private:
 	ComPtr<ID3D11InputLayout>								m_InputLayout;	//! 入力レイアウト

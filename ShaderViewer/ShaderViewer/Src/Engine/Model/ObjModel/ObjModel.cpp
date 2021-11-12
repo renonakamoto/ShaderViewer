@@ -128,20 +128,18 @@ bool ObjModel::Load(const char* fileName_)
     }
     strncpy_s(flie_path, fileName_, path_tail_point + 1);
 
-    ID3D11Device* device = GRAPHICS->GetDevice();
-
     // マテリアルの読みこみ
-    if (LoadMaterialFile(materials, flie_path, device) == false)
+    if (LoadMaterialFile(materials, flie_path) == false)
     {
         return false;
     }
     // 頂点バッファの作成
-    if (CreateVertexBuffer(device) == false) 
+    if (CreateVertexBuffer() == false) 
     {
         return false;
     }
     // インデックスバッファの作成
-    if (CreateIndexBuffer(device) == false) 
+    if (CreateIndexBuffer() == false) 
     {
         return false;
     }
@@ -186,14 +184,17 @@ void ObjModel::Render(DirectX::XMFLOAT3 pos_, DirectX::XMFLOAT3 scale_, DirectX:
         {
             graphics->SetTexture(nullptr);
         }
-        ConstantBuffer* c = graphics->GetConstantBufferData();
+        
+        // 定数バッファ取得
+        ID3D11Buffer*   c_buf      = graphics->GetConstantBuffer();
+        ConstantBuffer* c_buf_data = graphics->GetConstantBufferData();
+        
         // コンスタントバッファの更新
-        context->UpdateSubresource(graphics->GetConstantBuffer(), 0U, nullptr, graphics->GetConstantBufferData(), 0U, 0U);
+        context->UpdateSubresource(c_buf, 0U, nullptr, c_buf_data, 0U, 0U);
 
         // コンスタントバッファを設定
-        ID3D11Buffer* constant_buffer = graphics->GetConstantBuffer();
-        context->VSSetConstantBuffers(0U, 1U, &constant_buffer);
-        context->PSSetConstantBuffers(0U, 1U, &constant_buffer);
+        context->VSSetConstantBuffers(0U, 1U, &c_buf);
+        context->PSSetConstantBuffers(0U, 1U, &c_buf);
 
         // 描画
         context->DrawIndexed(static_cast<UINT>(mesh.Indices.size()), 0U, 0U);
@@ -272,8 +273,11 @@ void ObjModel::ParseFKeywordTag(MeshData& meshData_, std::vector<DirectX::XMFLOA
     }
 
 
+    /*
+        1ポリゴン4頂点のデータの場合の処理
+        インデックスバッファに頂点番号を追加し3頂点になるようにする。
+    */
     size_t size = meshData_.Indices.size();
-
     if (space_split.size() > 3)
     {
         meshData_.Indices.push_back(meshData_.Indices[size - 4]);
@@ -299,7 +303,7 @@ void ObjModel::ParseSlashKeywordTag(int* list_, char* buffer_)
 
 }
 
-bool ObjModel::LoadMaterialFile(std::vector<std::string> fileList_, std::string filePath_, ID3D11Device* device_)
+bool ObjModel::LoadMaterialFile(std::vector<std::string> fileList_, std::string filePath_)
 {
     const int line_buffer_length = 1024;
     char line_buffer[line_buffer_length];
@@ -367,7 +371,7 @@ bool ObjModel::LoadMaterialFile(std::vector<std::string> fileList_, std::string 
                 if (split.size() > 1)
                 {
                     m_Materials[current_material_name].TextureKeyWord = split[0];
-                    LoadTexture(split[0], m_Materials[current_material_name].TextureName, device_);
+                    LoadTexture(split[0], m_Materials[current_material_name].TextureName);
                 }
 
             }
@@ -380,7 +384,7 @@ bool ObjModel::LoadMaterialFile(std::vector<std::string> fileList_, std::string 
     return true;
 }
 
-bool ObjModel::LoadTexture(std::string keyWord_, std::string fileName_, ID3D11Device* device_)
+bool ObjModel::LoadTexture(std::string keyWord_, std::string fileName_)
 {
     // ファイル名を取得
     std::string file_path = fileName_;
@@ -431,8 +435,10 @@ bool ObjModel::LoadTexture(std::string keyWord_, std::string fileName_, ID3D11De
     
     if (FAILED(hr)) return false;
 
+    ID3D11Device* device = GRAPHICS->GetDevice();
+
     if (FAILED(DirectX::CreateShaderResourceView(
-        device_,
+        device,
         image.GetImages(),
         image.GetImageCount(),
         metadata,
@@ -447,8 +453,10 @@ bool ObjModel::LoadTexture(std::string keyWord_, std::string fileName_, ID3D11De
     return true;
 }
 
-bool ObjModel::CreateVertexBuffer(ID3D11Device* device_)
+bool ObjModel::CreateVertexBuffer()
 {
+    ID3D11Device* device = GRAPHICS->GetDevice();
+
     for (MeshData& mesh : m_MeshList)
     {
         // 頂点バッファの作成
@@ -494,7 +502,7 @@ bool ObjModel::CreateVertexBuffer(ID3D11Device* device_)
         /*
         * D3D11_BUFFER_DESCとD3D11_SUBRESOURCE_DATAの情報をもとにバッファを作成する
         */
-        if (FAILED(device_->CreateBuffer(&buffer_desc, &sub_resource_data, mesh.VertexBuffer.GetAddressOf())))
+        if (FAILED(device->CreateBuffer(&buffer_desc, &sub_resource_data, mesh.VertexBuffer.GetAddressOf())))
         {
             return false;
         }
@@ -503,8 +511,10 @@ bool ObjModel::CreateVertexBuffer(ID3D11Device* device_)
     return true;
 }
 
-bool ObjModel::CreateIndexBuffer(ID3D11Device* device_)
+bool ObjModel::CreateIndexBuffer()
 {
+    ID3D11Device* device = GRAPHICS->GetDevice();
+
     for (MeshData& mesh : m_MeshList)
     {
         D3D11_BUFFER_DESC index_buffer_desc;
@@ -521,7 +531,7 @@ bool ObjModel::CreateIndexBuffer(ID3D11Device* device_)
         index_init_data.SysMemSlicePitch = 0;
 
 
-        if (FAILED(device_->CreateBuffer(&index_buffer_desc, &index_init_data, mesh.IndexBuffer.GetAddressOf())))
+        if (FAILED(device->CreateBuffer(&index_buffer_desc, &index_init_data, mesh.IndexBuffer.GetAddressOf())))
         {
             return false;
         }
@@ -530,8 +540,10 @@ bool ObjModel::CreateIndexBuffer(ID3D11Device* device_)
     return true;
 }
 
-bool ObjModel::CreateInputLayout(ID3D11Device* device_, VertexShader* vertexShader_)
+bool ObjModel::CreateInputLayout(VertexShader* vertexShader_)
 {
+    ID3D11Device* device = GRAPHICS->GetDevice();
+
     D3D11_INPUT_ELEMENT_DESC vertex_desc[]{
         { "POSITION",	0, DXGI_FORMAT_R32G32B32_FLOAT,		0,	0,                            D3D11_INPUT_PER_VERTEX_DATA, 0 },
         { "NORMAL",		0, DXGI_FORMAT_R32G32B32_FLOAT,		0,	D3D11_APPEND_ALIGNED_ELEMENT, D3D11_INPUT_PER_VERTEX_DATA, 0 },
@@ -539,7 +551,7 @@ bool ObjModel::CreateInputLayout(ID3D11Device* device_, VertexShader* vertexShad
     };
 
     //頂点レイアウト作成
-    if (FAILED(device_->CreateInputLayout(
+    if (FAILED(device->CreateInputLayout(
         vertex_desc,				        // レイアウト設定
         ARRAYSIZE(vertex_desc),		        // 配列サイズ
         vertexShader_->GetData(),	        // レイアウトと関連付ける頂点シェーダのデータ
