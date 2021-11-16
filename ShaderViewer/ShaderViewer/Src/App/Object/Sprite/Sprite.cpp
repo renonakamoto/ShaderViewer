@@ -3,6 +3,10 @@
 
 bool Sprite::Init(ID3D11ShaderResourceView* tex_, UINT width_, UINT height_, VertexShader* vs_, PixelShader* ps_)
 {
+    if (!tex_ || !vs_ || !ps_) {
+        return false;
+    }
+
     m_TextureData.Texture = tex_;
     m_TextureData.Width   = width_;
     m_TextureData.Height  = height_;

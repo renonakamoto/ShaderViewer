@@ -19,14 +19,15 @@ bool App::Init()
 	if (InitModels() == false) {
 		return false;
 	}
+	
 	// シェーダーの初期化
 	if (InitShaders() == false) {
 		return false;
 	}
+	
 	// ライティングオブジェクトの初期化
-	if (InitLigtings() == false) {
-		return false;
-	}
+	InitLigtings();
+
 	// ポストプロセスオブジェクトの初期化
 	InitPostProcess();
 
@@ -101,15 +102,28 @@ void App::Draw()
 
 bool App::InitModels()
 {
-	if (m_ModelManager.CreateModel("Assets/Models/Sphere.obj", "ShpereModel") == false)
+	// モデル作成に必要なパラメーター
+	struct LoadParam
 	{
-		return false;
-	}
-	if (m_ModelManager.CreateModel("Assets/Models/Cube.obj", "CubeModel") == false)
-	{
-		return false;
-	}
+		std::string FileName;		// ファイル名(パス無し, Assets/Shader/に入れておく必要がある)
+		const char* DisplayName;	// ディスプレイに表示する名前
+	};
 
+	LoadParam params[] =
+	{
+		{"Sphere.obj",	"ShpereModel"},
+		{"Cube.obj",	"CubeModel"}
+	};
+	
+	std::string path = "Assets/Models/";
+	for (auto param : params)
+	{
+		if (m_ModelManager.CreateModel((path + param.FileName).c_str(), param.DisplayName) == false)
+		{
+			return false;
+		}
+	}
+	
 	return true;
 }
 
@@ -136,7 +150,7 @@ bool App::InitShaders()
 		{"NegaPosiPixelShader.cso",		"NegaPosiPS",	 KindShader::PS},
 		{"SepiaPixelShader.cso",		"SepiaPS",		 KindShader::PS},
 		{"CameraDepthVertexShader.cso",	"CameraDepthVS", KindShader::VS},
-		{"OutlinePixelShader.cso",		"OurlinePS",	 KindShader::PS},
+		{"OutlinePixelShader.cso",		"OutlinePS",	 KindShader::PS},
 		{"UnlitPixelShader.cso",		"UnlitPS",		 KindShader::PS},
 		{"2DPixelShader.cso",			"2DPS",			 KindShader::PS},
 		{"ToonPixelShader.cso",			"ToonPS",		 KindShader::PS},
@@ -155,62 +169,21 @@ bool App::InitShaders()
 	return true;
 }
 
-bool App::InitLigtings()
+void App::InitLigtings()
 {
-	auto shader_manager = ShaderManager::GetInstance();
-	
-	std::unique_ptr<LightingBase> phong = std::make_unique<Phong>();
-	bool success = phong.get()->Init(shader_manager->GetVertexShader("VS"), shader_manager->GetPixelShader("PS"));
-	if (!success){
-		return false;
-	}
-	LightingManager::GetInstance()->Entry("Phong", std::move(phong));
-
-	std::unique_ptr<LightingBase> blinn = std::make_unique<BlinnPhong>();
-	success = blinn.get()->Init(shader_manager->GetVertexShader("VS"), shader_manager->GetPixelShader("BPS"));
-	if (!success){
-		return false;
-	}
-	LightingManager::GetInstance()->Entry("BPhong", std::move(blinn));
-
-	std::unique_ptr<LightingBase> toon = std::make_unique<ToonShading>();
-	success = toon.get()->Init(shader_manager->GetVertexShader("VS"), shader_manager->GetPixelShader("ToonPS"));
-	if (!success) {
-		return false;
-	}
-	LightingManager::GetInstance()->Entry("Toon", std::move(toon));
-	
-
-	return true;
+	LightingManager::GetInstance()->Entry<Phong>		("Phong",	"VS", "PS");
+	LightingManager::GetInstance()->Entry<BlinnPhong>	("BPhong",	"VS", "BPS");
+	LightingManager::GetInstance()->Entry<ToonShading>	("Toon",	"VS", "ToonPS");
 }
 
 void App::InitPostProcess()
 {
-	auto shader_manager = ShaderManager::GetInstance();
-
-	std::unique_ptr<PostEffectBase> normal		= std::make_unique<NormalPostEffect>();
-	normal.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("2DPS"));
-	m_PostProcessManager.Entry("Normal", std::move(normal));
-	
-	std::unique_ptr<PostEffectBase> blur		= std::make_unique<BlurPostEffect>();
-	blur.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("BlurPS"));
-	m_PostProcessManager.Entry("Blur", std::move(blur));
-
-	std::unique_ptr<PostEffectBase> monochrome	= std::make_unique<MonochromePostEffect>();
-	monochrome.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("MonochromePS"));
-	m_PostProcessManager.Entry("Monochrome", std::move(monochrome));
-
-	std::unique_ptr<PostEffectBase> negaposi	= std::make_unique<NegaPosiPostEffect>();
-	negaposi.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("NegaPosiPS"));
-	m_PostProcessManager.Entry("NegaPosi", std::move(negaposi));
-
-	std::unique_ptr<PostEffectBase> sepia		= std::make_unique<SepiaPostEffect>();
-	sepia.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("SepiaPS"));
-	m_PostProcessManager.Entry("Sepia", std::move(sepia));
-	
-	std::unique_ptr<PostEffectBase> outline		= std::make_unique<OutlinePostEffect>();
-	outline.get()->Init(shader_manager->GetVertexShader("2DVS"), shader_manager->GetPixelShader("OurlinePS"));
-	m_PostProcessManager.Entry("Outline", std::move(outline));
+	m_PostProcessManager.Entry<NormalPostEffect>	("Normal",		"2DVS", "2DPS");
+	m_PostProcessManager.Entry<BlurPostEffect>		("Blur",		"2DVS", "BlurPS");
+	m_PostProcessManager.Entry<MonochromePostEffect>("Monochrome",	"2DVS", "MonochromePS");
+	m_PostProcessManager.Entry<NegaPosiPostEffect>	("NegaPosi",	"2DVS", "NegaPosiPS");
+	m_PostProcessManager.Entry<SepiaPostEffect>		("Sepia",		"2DVS", "SepiaPS");
+	m_PostProcessManager.Entry<OutlinePostEffect>	("Outline",		"2DVS", "OutlinePS");
 }
 
 void App::SetUpDepthShader()

@@ -54,15 +54,15 @@ private:
 	void ParseVertex(std::vector<DirectX::XMFLOAT3>& data_, char* buff_);
 
 	/**
-	* @fn void ParseFKeywordTag(std::vector<DirectX::XMFLOAT3>& data_, char* buff_)
+	* @fn void ParseFKeywordTag(MeshData& meshData_, std::vector<DirectX::XMFLOAT3>& vertices_, std::vector<DirectX::XMFLOAT3>& textures_, std::vector<DirectX::XMFLOAT3>& normals_, char* buff_)
 	* @brief Objファイルの面のデータを解析する関数
 	* @param[out] meshData_ 面の頂点データを格納する変数
 	* @param[in] vertices_ 頂点座標リスト
 	* @param[in] textures_ テクスチャ座標リスト
 	* @param[in] normals_ 法線ベクトルリスト
-	* @param[in] buffer_ Objファイルで取得した面データの1行
+	* @param[in] buff_ Objファイルで取得した面データの1行
 	*/
-	void ParseFKeywordTag(MeshData& meshData_, std::vector<DirectX::XMFLOAT3>& vertices_, std::vector<DirectX::XMFLOAT3>& textures_, std::vector<DirectX::XMFLOAT3>& normals_, char* buffer_);
+	void ParseFKeywordTag(MeshData& meshData_, std::vector<DirectX::XMFLOAT3>& vertices_, std::vector<DirectX::XMFLOAT3>& textures_, std::vector<DirectX::XMFLOAT3>& normals_, char* buff_);
 
 	/**
 	* @fn void ParseSlashKeywordTag(int* list_, char* buffer_)
@@ -82,7 +82,7 @@ private:
 	bool LoadMaterialFile(std::vector<std::string> fileList_, std::string filePath_);
 
 	/**
-	* @fn bool LoadTexture(std::string keyWord_, std::string fileName_, ID3D11Device* device_)
+	* @fn bool LoadTexture(std::string keyWord_, std::string fileName_)
 	* @brief テクスチャ読み込み関数
 	* @param[in] keyWord_ テクスチャに紐づける
 	* @param[in] fileName_ ファイルパス

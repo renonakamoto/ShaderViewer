@@ -3,16 +3,6 @@
 #include "../../Engine/Engine.h"
 #include "../../Engine/imGui/imgui_impl_dx11.h"
 
-void LightingManager::Entry(const char* displayName_, std::unique_ptr<LightingBase> lig_)
-{
-	if(!lig_) {
-		return;
-	}
-
-	m_LightingNamesList.push_back(displayName_);
-	m_LightingList.push_back(std::move(lig_));
-}
-
 void LightingManager::SetupShader() const
 {
 	if (m_LightingList.size() == 0) {

@@ -218,7 +218,7 @@ void ObjModel::ParseVertex(std::vector<DirectX::XMFLOAT3>& data_, char* buff_)
     data_.push_back(DirectX::XMFLOAT3(value[0], value[1], value[2]));
 }
 
-void ObjModel::ParseFKeywordTag(MeshData& meshData_, std::vector<DirectX::XMFLOAT3>& vertices_, std::vector<DirectX::XMFLOAT3>& textures_, std::vector<DirectX::XMFLOAT3>& normals_, char* buffer_)
+void ObjModel::ParseFKeywordTag(MeshData& meshData_, std::vector<DirectX::XMFLOAT3>& vertices_, std::vector<DirectX::XMFLOAT3>& textures_, std::vector<DirectX::XMFLOAT3>& normals_, char* buff_)
 {
     const int info_num = 3;
     int vertex_info[info_num] =
@@ -229,7 +229,7 @@ void ObjModel::ParseFKeywordTag(MeshData& meshData_, std::vector<DirectX::XMFLOA
     };
 
     // 面情報をスペース区切りで分ける
-    std::vector<std::string> space_split = Split(buffer_, ' ');
+    std::vector<std::string> space_split = Split(buff_, ' ');
 
     for (size_t i = 0; i < space_split.size(); ++i)
     {

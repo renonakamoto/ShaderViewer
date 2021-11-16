@@ -88,15 +88,14 @@ private:
 	bool InitShaders();
 
 	/**
-	* @fn bool InitLigtings()
-	* @brief ライティングの初期化関数
-	* @return bool 成功したかどうか
+	* @fn void InitLigtings()
+	* @brief ライティングオブジェクトの初期化関数
 	*/
-	bool InitLigtings();
+	void InitLigtings();
 
 	/**
 	* @fn bool InitPostProcess()
-	* @brief ポストプロセスの初期化関数
+	* @brief ポストプロセスオブジェクトの初期化関数
 	*/
 	void InitPostProcess();
 
