@@ -26,10 +26,14 @@ bool App::Init()
 	}
 	
 	// ライティングオブジェクトの初期化
-	InitLigtings();
+	if (InitLigtings() == false) {
+		return false;
+	}
 
 	// ポストプロセスオブジェクトの初期化
-	InitPostProcess();
+	if (InitPostProcess() == false) {
+		return false;
+	}
 
 	return true;
 }
@@ -169,21 +173,55 @@ bool App::InitShaders()
 	return true;
 }
 
-void App::InitLigtings()
+bool App::InitLigtings()
 {
-	LightingManager::GetInstance()->Entry<Phong>		("Phong",	"VS", "PS");
-	LightingManager::GetInstance()->Entry<BlinnPhong>	("BPhong",	"VS", "BPS");
-	LightingManager::GetInstance()->Entry<ToonShading>	("Toon",	"VS", "ToonPS");
+	std::vector<bool> result_list;
+
+	result_list.push_back(LightingManager::GetInstance()->Entry<Phong>		("Phong",	"VS", "PS"));
+	result_list.push_back(LightingManager::GetInstance()->Entry<BlinnPhong>	("BPhong",	"VS", "BPS"));
+	result_list.push_back(LightingManager::GetInstance()->Entry<ToonShading>("Toon",	"VS", "ToonPS"));
+
+	/*
+		各結果を参照し成功しているかを調べる
+		失敗している箇所をでデバッグで発見しやすいように範囲forを使用せず
+		通常のforでチェックをおこなっている。
+	*/
+	for (size_t i = 0; i < result_list.size(); ++i)
+	{
+		if (result_list[i] == false)
+		{
+			return false;
+		}
+	}
+
+	return true;
 }
 
-void App::InitPostProcess()
+bool App::InitPostProcess()
 {
-	m_PostProcessManager.Entry<NormalPostEffect>	("Normal",		"2DVS", "2DPS");
-	m_PostProcessManager.Entry<BlurPostEffect>		("Blur",		"2DVS", "BlurPS");
-	m_PostProcessManager.Entry<MonochromePostEffect>("Monochrome",	"2DVS", "MonochromePS");
-	m_PostProcessManager.Entry<NegaPosiPostEffect>	("NegaPosi",	"2DVS", "NegaPosiPS");
-	m_PostProcessManager.Entry<SepiaPostEffect>		("Sepia",		"2DVS", "SepiaPS");
-	m_PostProcessManager.Entry<OutlinePostEffect>	("Outline",		"2DVS", "OutlinePS");
+	std::vector<bool> result_list;
+
+	result_list.push_back(m_PostProcessManager.Entry<NormalPostEffect>		("Normal",		"2DVS", "2DPS"));
+	result_list.push_back(m_PostProcessManager.Entry<BlurPostEffect>		("Blur",		"2DVS", "BlurPS"));
+	result_list.push_back(m_PostProcessManager.Entry<MonochromePostEffect>	("Monochrome",	"2DVS", "MonochromePS"));
+	result_list.push_back(m_PostProcessManager.Entry<NegaPosiPostEffect>	("NegaPosi",	"2DVS", "NegaPosiPS"));
+	result_list.push_back(m_PostProcessManager.Entry<SepiaPostEffect>		("Sepia",		"2DVS", "SepiaPS"));
+	result_list.push_back(m_PostProcessManager.Entry<OutlinePostEffect>		("Outline",		"2DVS", "OutlinePS"));
+
+	/*
+		各結果を参照し成功しているかを調べる
+		失敗している箇所をでデバッグで発見しやすいように範囲forを使用せず
+		通常のforでチェックをおこなっている。
+	*/
+	for (size_t i = 0; i < result_list.size(); ++i)
+	{
+		if (result_list[i] == false)
+		{
+			return false;
+		}
+	}
+
+	return true;
 }
 
 void App::SetUpDepthShader()

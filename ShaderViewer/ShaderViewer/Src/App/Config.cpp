@@ -1,5 +1,6 @@
 ﻿#include "Config.h"
 #include "../Utility/Utility.h"
+#include <unordered_map>
 #include <cstdio>
 #include <sstream>
 
@@ -20,48 +21,44 @@ void ConfigParameter::Load()
 
 	const int line_buf_len = 1024;
 	char line_buf[line_buf_len];
+
+	// 各パラメータのキーとデータを紐づける
+	std::unordered_map<std::string, float*> param_map;
+	param_map["CameraFov"]  = &m_CameraFov;
+	param_map["CameraNear"] = &m_CameraNear;
+	param_map["CameraFar"]  = &m_CameraFar;
+	param_map["GuiWidth"]   = &m_GuiWidth;
+	param_map["GuiHeight"]  = &m_GuiHeight;
 	
+	// 一行ずつ解析していく
 	while (fgets(line_buf, line_buf_len, fp) != nullptr)
 	{
 		// [#]なら無視
 		if (line_buf[0] == '#') continue;
 
 		Replace('\n', '\0', line_buf);
-
+		
 		std::vector<std::string> split_str = Split(line_buf, ' ');
 
 		if (split_str[0] == "") continue;
-		// パラメータの位置までポインタを移動
-		char* point = strchr(line_buf, '=')+2;
+		
+		// パラメータのポインタ位置を保存
+		char* param_point = strchr(line_buf, '=')+2;
 
-
-		// 各パラメータを取得していく
-		if (split_str[0] == "CameraFov")
+		if (split_str[0] == "LightPos")
 		{
-			m_CameraFov = static_cast<float>(atof(point));
-		}
-		else if (split_str[0] == "CameraNear")
-		{
-			m_CameraNear = static_cast<float>(atof(point));
-		}
-		else if (split_str[0] == "CameraFar")
-		{
-			m_CameraFar = static_cast<float>(atof(point));
-		}
-		else if (split_str[0] == "GuiWidth")
-		{
-			m_GuiWidth = static_cast<float>(atof(point));
-		}
-		else if (split_str[0] == "GuiHeight")
-		{
-			m_GuiHeight = static_cast<float>(atof(point));
-		}
-		else if (split_str[0] == "LightPos")
-		{
-			split_str = Split(point, ' ');
+			split_str = Split(param_point, ' ');
 			m_LightPos.x = static_cast<float>(atof(split_str[0].c_str()));
 			m_LightPos.y = static_cast<float>(atof(split_str[1].c_str()));
 			m_LightPos.z = static_cast<float>(atof(split_str[2].c_str()));
+		}
+		else
+		{
+			if (param_map.find(split_str[0]) == param_map.end()) {
+				continue;
+			}
+
+			*param_map[split_str[0]] = static_cast<float>(atof(param_point));
 		}
 	}
 
