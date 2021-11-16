@@ -111,27 +111,6 @@
     <ClCompile Include="Src\App\Lighting\Phong.cpp">
       <Filter>Src\App\Lighting</Filter>
     </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_tables.cpp">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_widgets.cpp">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui.cpp">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_demo.cpp">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_draw.cpp">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_dx11.cpp">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClCompile>
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_win32.cpp">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClCompile>
     <ClCompile Include="Src\Engine\Shader\ShaderManager.cpp">
       <Filter>Src\Engine\Shader</Filter>
     </ClCompile>
@@ -195,6 +174,27 @@
     <ClCompile Include="Src\App\Config.cpp">
       <Filter>Src\App</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Engine\imGui\imgui_draw.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\imGui\imgui_impl_dx11.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\imGui\imgui_impl_win32.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\imGui\imgui_tables.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\imGui\imgui_widgets.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\imGui\imgui.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
+    <ClCompile Include="Src\Engine\imGui\imgui_demo.cpp">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Engine\Graphics\RenderTarget.h">
@@ -241,30 +241,6 @@
     </ClInclude>
     <ClInclude Include="Src\App\Lighting\Phong.h">
       <Filter>Src\App\Lighting</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_win32.h">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_internal.h">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_rectpack.h">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_textedit.h">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_truetype.h">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imconfig.h">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui.h">
-      <Filter>Src\Engine\imGui</Filter>
-    </ClInclude>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_dx11.h">
-      <Filter>Src\Engine\imGui</Filter>
     </ClInclude>
     <ClInclude Include="Src\Engine\Shader\ShaderManager.h">
       <Filter>Src\Engine\Shader</Filter>
@@ -328,6 +304,30 @@
     </ClInclude>
     <ClInclude Include="Src\App\Config.h">
       <Filter>Src\App</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\imGui\imgui_impl_dx11.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\imGui\imgui_impl_win32.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\imGui\imgui_internal.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\imGui\imstb_rectpack.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\imGui\imstb_textedit.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\imGui\imstb_truetype.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\imGui\imconfig.h">
+      <Filter>Src\Engine\imGui</Filter>
+    </ClInclude>
+    <ClInclude Include="Src\Engine\imGui\imgui.h">
+      <Filter>Src\Engine\imGui</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

@@ -147,13 +147,6 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_demo.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_draw.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_dx11.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_win32.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_tables.cpp" />
-    <ClCompile Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_widgets.cpp" />
     <ClCompile Include="Main.cpp" />
     <ClCompile Include="Src\App\App.cpp" />
     <ClCompile Include="Src\App\Camera\Camera.cpp" />
@@ -179,6 +172,13 @@
     <ClCompile Include="Src\Engine\Engine.cpp" />
     <ClCompile Include="Src\Engine\Graphics\DirectGraphics.cpp" />
     <ClCompile Include="Src\Engine\Graphics\RenderTarget.cpp" />
+    <ClCompile Include="Src\Engine\imGui\imgui.cpp" />
+    <ClCompile Include="Src\Engine\imGui\imgui_demo.cpp" />
+    <ClCompile Include="Src\Engine\imGui\imgui_draw.cpp" />
+    <ClCompile Include="Src\Engine\imGui\imgui_impl_dx11.cpp" />
+    <ClCompile Include="Src\Engine\imGui\imgui_impl_win32.cpp" />
+    <ClCompile Include="Src\Engine\imGui\imgui_tables.cpp" />
+    <ClCompile Include="Src\Engine\imGui\imgui_widgets.cpp" />
     <ClCompile Include="Src\Engine\Model\ObjModel\ObjModel.cpp" />
     <ClCompile Include="Src\Engine\Shader\PixelShader.cpp" />
     <ClCompile Include="Src\Engine\Shader\ShaderBase.cpp" />
@@ -190,14 +190,6 @@
     <ClCompile Include="Src\Utility\Utility.cpp" />
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imconfig.h" />
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui.h" />
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_dx11.h" />
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_impl_win32.h" />
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imgui_internal.h" />
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_rectpack.h" />
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_textedit.h" />
-    <ClInclude Include="..\..\..\..\Desktop\ObjFileRenderSample\ObjFileRenderSample\ObjFileRenderSample\Src\imGui\imstb_truetype.h" />
     <ClInclude Include="Src\App\App.h" />
     <ClInclude Include="Src\App\Camera\Camera.h" />
     <ClInclude Include="Src\App\Config.h" />
@@ -223,6 +215,14 @@
     <ClInclude Include="Src\Engine\Graphics\DirectGraphics.h" />
     <ClInclude Include="Src\Engine\Graphics\GraphicsUtility.h" />
     <ClInclude Include="Src\Engine\Graphics\RenderTarget.h" />
+    <ClInclude Include="Src\Engine\imGui\imconfig.h" />
+    <ClInclude Include="Src\Engine\imGui\imgui.h" />
+    <ClInclude Include="Src\Engine\imGui\imgui_impl_dx11.h" />
+    <ClInclude Include="Src\Engine\imGui\imgui_impl_win32.h" />
+    <ClInclude Include="Src\Engine\imGui\imgui_internal.h" />
+    <ClInclude Include="Src\Engine\imGui\imstb_rectpack.h" />
+    <ClInclude Include="Src\Engine\imGui\imstb_textedit.h" />
+    <ClInclude Include="Src\Engine\imGui\imstb_truetype.h" />
     <ClInclude Include="Src\Engine\Model\Model.h" />
     <ClInclude Include="Src\Engine\Model\ObjModel\ObjModel.h" />
     <ClInclude Include="Src\Engine\Shader\PixelShader.h" />
