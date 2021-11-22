@@ -27,7 +27,7 @@ public:
 
 	/**
 	* @fn bool Create(ID3D11Device* device_, const char* fileName_))
-	* @brief ピクセルシェーダシェーダーの作成を行う関数
+	* @brief ピクセルシェーダーの作成を行う関数
 	* @param[in] device_ デバイス
 	* @param[in] fileName_ ファイル名(パス付)
 	* @return bool 成功したかどうかを真偽で返す

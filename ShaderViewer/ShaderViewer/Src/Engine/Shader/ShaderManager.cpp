@@ -26,6 +26,16 @@ bool ShaderManager::Load(const char* fileName_, std::string keyWord_, KindShader
 
 		break;
 	}
+	case KindShader::GS:
+	{
+		std::unique_ptr<GeometryShader> entry_gs = LoadGS(fileName_);
+		if (entry_gs) {
+			entry_gs.swap(m_GeometryShaders[keyWord_]);
+			return true;
+		}
+		
+		break;
+	}
 	default:
 		break;
 	}
@@ -53,4 +63,15 @@ std::unique_ptr<PixelShader> ShaderManager::LoadPS(const char* fileName_)
 	}
 
 	return ps;
+}
+
+std::unique_ptr<GeometryShader> ShaderManager::LoadGS(const char* fileName_)
+{
+	std::unique_ptr<GeometryShader> gs = std::make_unique<GeometryShader>();
+	if (gs.get()->Create(GRAPHICS->GetDevice(), fileName_) == false) {
+		gs.reset();
+		return nullptr;
+	}
+
+	return gs;
 }

@@ -6,16 +6,26 @@
 #include <memory>
 #include "VertexShader.h"
 #include "PixelShader.h"
+#include "GeometryShader.h"
 
 enum class KindShader
 {
-	VS,
-	PS,
+	VS,	//! バーテックスシェーダー
+	PS,	//! ピクセルシェーダ
+	GS,	//! ジオメトリーシェーダー
 };
 
+/**
+* @brief シェーダーを管理するクラス
+*/
 class ShaderManager
 {
 public:
+	/**
+	* @fn static ShaderManager* GetInstance()
+	* @brief インスタンスを返す関数
+	* @return ShaderManager* インスタンスのポインタ
+	*/
 	static ShaderManager* GetInstance()
 	{
 		static ShaderManager instance;
@@ -40,18 +50,27 @@ public:
 		return m_PixelShaders[keyWord_].get();
 	}
 
+
 private:
+	/**
+	* @brief コンストラクタ
+	*/
 	ShaderManager() {}
 
+	/**
+	* @brief デストラクタ
+	*/
 	~ShaderManager() {}
 
 private:
 	std::unique_ptr<VertexShader> LoadVS(const char* fileName_);
 	std::unique_ptr<PixelShader>  LoadPS(const char* fileName_);
+	std::unique_ptr<GeometryShader>  LoadGS(const char* fileName_);
 
 private:
-	std::unordered_map<std::string, std::unique_ptr<VertexShader>> m_VertexShaders;	// 頂点シェーダーマップ
-	std::unordered_map<std::string, std::unique_ptr<PixelShader>>  m_PixelShaders;	// ピクセルシェーダーマップ
+	std::unordered_map<std::string, std::unique_ptr<VertexShader>>	  m_VertexShaders;		//! 頂点シェーダー
+	std::unordered_map<std::string, std::unique_ptr<PixelShader>>	  m_PixelShaders;		//! ピクセルシェーダー
+	std::unordered_map<std::string, std::unique_ptr<GeometryShader>>  m_GeometryShaders;	//! ジオメトリーシェーダー
 	
 };
 

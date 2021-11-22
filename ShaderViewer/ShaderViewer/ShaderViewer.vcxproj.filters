@@ -195,6 +195,9 @@
     <ClCompile Include="Src\Engine\imGui\imgui_demo.cpp">
       <Filter>Src\Engine\imGui</Filter>
     </ClCompile>
+    <ClCompile Include="Src\Engine\Shader\GeometryShader.cpp">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="Src\Engine\Graphics\RenderTarget.h">
@@ -329,6 +332,9 @@
     <ClInclude Include="Src\Engine\imGui\imgui.h">
       <Filter>Src\Engine\imGui</Filter>
     </ClInclude>
+    <ClInclude Include="Src\Engine\Shader\GeometryShader.h">
+      <Filter>Src\Engine\Shader</Filter>
+    </ClInclude>
   </ItemGroup>
   <ItemGroup>
     <FxCompile Include="Src\Shader\SimpleVS.hlsl">
@@ -374,6 +380,9 @@
       <Filter>Src\Shader</Filter>
     </FxCompile>
     <FxCompile Include="Src\Shader\ToonPixelShader.hlsl">
+      <Filter>Src\Shader</Filter>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\TestGS.hlsl">
       <Filter>Src\Shader</Filter>
     </FxCompile>
   </ItemGroup>

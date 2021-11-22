@@ -180,6 +180,7 @@
     <ClCompile Include="Src\Engine\imGui\imgui_tables.cpp" />
     <ClCompile Include="Src\Engine\imGui\imgui_widgets.cpp" />
     <ClCompile Include="Src\Engine\Model\ObjModel\ObjModel.cpp" />
+    <ClCompile Include="Src\Engine\Shader\GeometryShader.cpp" />
     <ClCompile Include="Src\Engine\Shader\PixelShader.cpp" />
     <ClCompile Include="Src\Engine\Shader\ShaderBase.cpp" />
     <ClCompile Include="Src\Engine\Shader\ShaderManager.cpp" />
@@ -225,6 +226,7 @@
     <ClInclude Include="Src\Engine\imGui\imstb_truetype.h" />
     <ClInclude Include="Src\Engine\Model\Model.h" />
     <ClInclude Include="Src\Engine\Model\ObjModel\ObjModel.h" />
+    <ClInclude Include="Src\Engine\Shader\GeometryShader.h" />
     <ClInclude Include="Src\Engine\Shader\PixelShader.h" />
     <ClInclude Include="Src\Engine\Shader\ShaderBase.h" />
     <ClInclude Include="Src\Engine\Shader\ShaderManager.h" />
@@ -310,6 +312,21 @@
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
       <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">vs_main</EntryPointName>
       <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)\ShaderViewer\Assets\Shader\%(Filename).cso</ObjectFileOutput>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
+    </FxCompile>
+    <FxCompile Include="Src\Shader\TestGS.hlsl">
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Geometry</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">5.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">Geometry</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Debug|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">Geometry</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|Win32'">4.0</ShaderModel>
+      <ShaderType Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Geometry</ShaderType>
+      <ShaderModel Condition="'$(Configuration)|$(Platform)'=='Release|x64'">5.0</ShaderModel>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Release|x64'">gs_main</EntryPointName>
+      <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">false</ExcludedFromBuild>
+      <EntryPointName Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">gs_main</EntryPointName>
       <ObjectFileOutput Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">$(SolutionDir)\ShaderViewer\Assets\Shader\%(Filename).cso</ObjectFileOutput>
       <ExcludedFromBuild Condition="'$(Configuration)|$(Platform)'=='Release|x64'">true</ExcludedFromBuild>
     </FxCompile>

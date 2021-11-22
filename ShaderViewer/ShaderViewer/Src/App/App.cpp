@@ -158,6 +158,7 @@ bool App::InitShaders()
 		{"UnlitPixelShader.cso",		"UnlitPS",		 KindShader::PS},
 		{"2DPixelShader.cso",			"2DPS",			 KindShader::PS},
 		{"ToonPixelShader.cso",			"ToonPS",		 KindShader::PS},
+		{"TestGS.cso",					"TestGS",		 KindShader::GS},
 	};
 
 	// 読み込み
